@@ -11,16 +11,16 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
 
 ## TODO
 
-- Basic project planning (see details in my [game-project-scope-study repo](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md))
--- ~~Sketch some rough wireframes for how the front end will look and act.~~
--- ~~Write out some user stories for the app. User stories are short of how a user interacts with your app, and follows the format "As a <role>, I want to <do something>, so that <some goal>.~~
--- ~~Model the entities in your app. Draw a diagram. Use your wireframes and user stories to drive you modeling process by asking "What 'things' are a user interacting with?"~~
-- ~~Create a repo that your project will use, and add a README to it.~~
-- Create a simple front-end with HTML and CSS, and host the front end on GitHub Pages. Use your wireframes to guide your layout.
-- Create the code to manage your game logic.
-- Write jQuery code to handle browser interaction.
-- Start communicating with the back-end using curl. Use this to begin writing your AJAX code.
-- Add any additional features to your app.
-- Finish your documentation. Make it high-quality.
+* Basic project planning (see details in my [game-project-scope-study repo](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md))
+..* ~~Sketch some rough wireframes for how the front end will look and act.~~
+..* ~~Write out some user stories for the app. User stories are short of how a user interacts with your app, and follows the format "As a <role>, I want to <do something>, so that <some goal>.~~
+..* ~~Model the entities in your app. Draw a diagram. Use your wireframes and user stories to drive you modeling process by asking "What 'things' are a user interacting with?"~~
+* ~~Create a repo that your project will use, and add a README to it.~~
+* Create a simple front-end with HTML and CSS, and host the front end on GitHub Pages. Use your wireframes to guide your layout.
+* Create the code to manage your game logic.
+* Write jQuery code to handle browser interaction.
+* Start communicating with the back-end using curl. Use this to begin writing your AJAX code.
+* Add any additional features to your app.
+* Finish your documentation. Make it high-quality.
 
 ## [Requirements](https://github.com/ga-wdi-boston/game-project/blob/master/requirements.md)
