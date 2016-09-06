@@ -10,7 +10,12 @@ const failure = (error) => {
   console.error(error);
 };
 
-const takeTurn = (cell) => {
+const createGameSuccess = (data) => {
+  console.log(data);
+  app.game = data.game;
+};
+
+const markCell = (cell) => {
   if (app.x_turn) {
     cell.html('x');
   } else if (!app.x_turn) {
@@ -26,6 +31,7 @@ const isEmpty = (cell) => {
 module.exports = {
   failure,
   success,
+  createGameSuccess,
   isEmpty,
-  takeTurn,
+  markCell,
 };
