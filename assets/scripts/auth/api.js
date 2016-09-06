@@ -28,8 +28,20 @@ const logOut = () => {
   });
 };
 
+const changePassword = (data) => {
+  return $.ajax({
+    url: app.host + '/change-password/' + app.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
 module.exports = {
   signUp,
   logIn,
   logOut,
+  changePassword,
 };
