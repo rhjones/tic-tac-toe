@@ -7,7 +7,9 @@
 require('./example');
 
 const authEvents = require('./auth/events.js');
+const gameEvents = require('./game/events.js');
 
 $(() => {
   authEvents.addHandlers();
+  gameEvents.addHandlers();
 });
