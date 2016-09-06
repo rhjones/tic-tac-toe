@@ -20,15 +20,12 @@ const takeTurn = (cell) => {
 };
 
 const isEmpty = (cell) => {
-  if (cell.html() === '') {
-    takeTurn(cell);
-  } else {
-    console.log('taken!');
-  }
+  return (cell.html() === '');
 };
 
 module.exports = {
   failure,
   success,
   isEmpty,
+  takeTurn,
 };
