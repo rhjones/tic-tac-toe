@@ -14,7 +14,11 @@ const onClickCell = () => {
   event.preventDefault();
   let cell = $(event.target);
   // let id = cell.data('id');
-  ui.isEmpty(cell);
+  if(ui.isEmpty(cell)) {
+    ui.takeTurn(cell);
+  } else {
+    console.log('cell is taken');
+  }
 };
 
 const addHandlers = () => {
