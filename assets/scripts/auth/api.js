@@ -18,7 +18,18 @@ const logIn = (data) => {
   });
 };
 
+const logOut = () => {
+  return $.ajax({
+    url: app.host + '/sign-out/' + app.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
 module.exports = {
   signUp,
   logIn,
+  logOut,
 };
