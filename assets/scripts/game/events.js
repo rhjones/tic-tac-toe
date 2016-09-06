@@ -6,16 +6,18 @@ const ui = require('./ui');
 const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
-    .done(ui.success)
+    .done(ui.createGameSuccess)
     .fail(ui.failure);
 };
 
 const onClickCell = () => {
   event.preventDefault();
   let cell = $(event.target);
-  // let id = cell.data('id');
-  if(ui.isEmpty(cell)) {
-    ui.takeTurn(cell);
+  let id = cell.data('id');
+  if(ui.isEmpty(id)) {
+    api.takeTurn(id)
+      .done(ui.markCell)
+      .fail(ui.failure);
   } else {
     console.log('cell is taken');
   }
