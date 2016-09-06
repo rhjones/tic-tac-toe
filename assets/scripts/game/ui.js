@@ -24,8 +24,8 @@ const markCell = (cell) => {
   app.x_turn = !app.x_turn;
 };
 
-const isEmpty = (cell) => {
-  return (cell.html() === '');
+const isEmpty = (id) => {
+  return (!app.game.cells[id]);
 };
 
 module.exports = {
