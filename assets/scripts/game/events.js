@@ -11,12 +11,17 @@ const onCreateGame = () => {
     .fail(ui.failure);
 };
 
+const onEndGameSuccess = (data) => {
+  gameLogic.updateGame(data);
+  ui.endGame();
+};
+
 const makeMove = (data) => {
   let result = gameLogic.takeTurnSuccess(data);
   // if result is true or 'tie' (but not false)
   if (result) {
     api.endGame()
-      .done(gameLogic.updateGame)
+      .done(onEndGameSuccess)
       .fail(ui.failure);
   }
 };
@@ -32,7 +37,7 @@ const onClickCell = () => {
       .done(makeMove)
       .fail(ui.failure);
   } else {
-    console.log('cell is taken');
+    ui.invalidMove();
   }
 };
 
