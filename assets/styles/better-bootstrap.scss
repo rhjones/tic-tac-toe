@@ -1,0 +1,7 @@
+form > div {
+  @extend .form-group;
+}
+
+form > button {
+  @extend .btn, .btn-default;
+}
