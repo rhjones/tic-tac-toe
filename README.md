@@ -19,10 +19,12 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
 * Create a simple front-end with HTML and CSS, and host the front end on GitHub Pages. Use your wireframes to guide your layout.
 * Create the code to manage your game logic.
   * ~~auth: sign up, sign in, change password, log out~~
-  * create game board
-  * start a game
-  * play a game
+  * ~~create game board~~
+  * ~~start a game~~
+  * ~~play a game~~
+  * prevent repeat moves
   * win a game
+    * prevent additonal moves
   * track wins/losses
 * Write jQuery code to handle browser interaction.
 * Start communicating with the back-end using curl. Use this to begin writing your AJAX code.
