@@ -10,6 +10,10 @@ const failure = (error) => {
   console.error(error);
 };
 
+const message = (messageId) => {
+  $(messageId).show().delay(3000).fadeToggle('slow');
+};
+
 const toggleAuth = () => {
   $('.auth-buttons').toggle();
   $('.auth-forms').toggle();
@@ -40,7 +44,7 @@ const logOutSuccess = () => {
 
 const passwordChangeSuccess = () => {
   toggleChangePassword();
-  $('#password-changed').show().delay(3000).fadeToggle('slow');
+  message('#password-changed');
 };
 
 module.exports = {
