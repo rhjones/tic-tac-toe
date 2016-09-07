@@ -27,8 +27,9 @@ const toggleAuthOptions = () => {
 
 const toggleChangePassword = () => {
   if (game.currentGame !== null) {
-    $('.alert').toggle().delay(3000).fadeToggle('slow', 'swing', function() {
-      $('#change-password').toggle();
+    console.log($('#warning'));
+    $('#saving-game').show().delay(3000).toggle('slow', 'swing', function() {
+      $('#change-password').toggle('slow');
     });
   }
   else {
