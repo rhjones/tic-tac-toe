@@ -37,6 +37,8 @@ const markCell = (id) => {
 const takeTurnSuccess = (data) => {
   console.log(data);
   app.game = data.game;
+  app.currentGameMoves++;
+  console.log(app.currentGameMoves);
   markCell(app.currentCellId);
 };
 
