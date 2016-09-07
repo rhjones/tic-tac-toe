@@ -2,6 +2,6 @@ form > div {
   @extend .form-group;
 }
 
-form > button {
+button {
   @extend .btn, .btn-default;
 }
