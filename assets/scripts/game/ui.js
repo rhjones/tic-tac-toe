@@ -93,7 +93,6 @@ const markCell = (id) => {
   } else if (!app.xTurn) {
     cell.html('o');
   }
-  app.xTurn = !app.xTurn;
 };
 
 const takeTurnSuccess = (data) => {
@@ -103,11 +102,23 @@ const takeTurnSuccess = (data) => {
   let id = app.currentCellId;
   console.log('current moves', app.currentGameMoves);
   markCell(id);
+
+  // if it's possible that someone has won, then check for a win/tie
   if(app.currentGameMoves >= 5) {
     checkWin(id);
   }
   if (checkWin(id)) {
     console.log('game is won!');
+    if(app.xTurn === 'x') {
+      console.log('x won!');
+    } else {
+      console.log('y won!');
+    }
+  } else if (app.currentGameMoves === 9 && !checkWin(id)) {
+    console.log('game is a tie!');
+  } else {
+    // move on to next player's turn
+    app.xTurn = !app.xTurn;
   }
 };
 
