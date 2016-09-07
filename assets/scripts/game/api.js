@@ -2,7 +2,15 @@
 
 const app = require('../app');
 
+const gameReset = () => {
+  app.currentCellId = null;
+  app.game = null;
+  app.xTurn = true;
+  app.currentGameMoves = 0;
+};
+
 const createGame = () => {
+  gameReset();
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',

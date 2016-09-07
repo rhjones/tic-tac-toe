@@ -10,8 +10,16 @@ const failure = (error) => {
   console.error(error);
 };
 
+const clearCells = () => {
+  for (let i = 0; i < 9; i++) {
+    let cell = $('.game-board').find( "[data-id='" + i + "']");
+    cell.html('');
+  }
+};
+
 const createGameSuccess = (data) => {
   console.log(data);
+  clearCells();
   app.game = data.game;
 };
 
