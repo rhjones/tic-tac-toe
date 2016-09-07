@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app');
+const game = require('../game/game');
 
 const success = (data) => {
   console.log(data);
@@ -24,6 +25,18 @@ const toggleAuthOptions = () => {
   $('#sign-up').toggle('fast');
 };
 
+const toggleChangePassword = () => {
+  if (game.currentGame !== null) {
+    $('.alert').toggle().delay(3000).fadeToggle('slow', 'swing', function() {
+      $('#change-password').toggle();
+    });
+  }
+  else {
+    $('.game-play').toggle();
+    $('#change-password').toggle();
+  }
+};
+
 const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
@@ -40,4 +53,5 @@ module.exports = {
   logInSuccess,
   logOutSuccess,
   toggleAuthOptions,
+  toggleChangePassword,
 };
