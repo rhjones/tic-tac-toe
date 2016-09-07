@@ -23,20 +23,27 @@ const isEmpty = (id) => {
 };
 
 const checkRows = (cells, id) => {
-  console.log('checking rows for cell', id);
   if ([0, 1, 2].indexOf(id) > -1) {
     return ((cells[0] === cells[1]) && (cells[1] === cells[2]));
   }
-  if ([3, 4, 5].indexOf(id) > -1) {
+  else if ([3, 4, 5].indexOf(id) > -1) {
     return ((cells[2] === cells[4]) && (cells[4] === cells[5]));
   }
-  if ([6, 7, 8].indexOf(id) > -1) {
+  else if ([6, 7, 8].indexOf(id) > -1) {
     return ((cells[6] === cells[7]) && (cells[7] === cells[8]));
   }
 };
 
-const checkCols = (id) => {
-  console.log('checking cols for cell', id);
+const checkCols = (cells, id) => {
+  if ([0, 3, 6].indexOf(id) > -1) {
+    return ((cells[0] === cells[3]) && (cells[3] === cells[6]));
+  }
+  else if ([1, 4, 7].indexOf(id) > -1) {
+    return ((cells[1] === cells[4]) && (cells[4] === cells[7]));
+  }
+  else if ([2, 5, 8].indexOf(id) > -1) {
+    return ((cells[2] === cells[5]) && (cells[5] === cells[8]));
+  }
 };
 
 const checkDiagonals = (cells, id) => {
@@ -65,6 +72,8 @@ const checkWin = (id) => {
     if(checkDiagonals(cells, id)) {
       return true;
     }
+  } else {
+    return false;
   }
 };
 
