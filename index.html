@@ -9,7 +9,17 @@
     <body class="container-fluid">
       
       <h1>Tic-Tac-Toe</h1>
-      <h2>Sign Up</h2>
+
+      <div id="auth-buttons">
+        <button type="button" id="log-in-link">Log In</button>
+        <button type="button" id="sign-up-link">Sign Up</button>
+      </div>
+
+      <div id="user-buttons">
+        <button type="button" id="change-password-link">Change Password</button>
+        <button type="button" id="log-out">Log Out</button>
+      </div>
+
       <form id="sign-up">
         <div>
           <label for="credentials[email]">Email</label>
@@ -26,7 +36,6 @@
         <button type="submit">Sign Up</button>
       </form>
 
-      <h2>Log In</h2>
       <form id="log-in">
         <div>
           <label for="credentials[email]">Email</label>
@@ -39,12 +48,6 @@
         <button type="submit">Log In</button>
       </form>
 
-      <h2>Log Out</h2>
-      <form id="log-out">
-        <button type="submit">Log Out</button>
-      </form>
-
-      <h2>Change Password</h2>
       <form id="change-password">
         <div>
           <label for="passwords[old]">Current password</label>
@@ -57,24 +60,26 @@
         <button type="submit">Change Password</button>
       </form>
 
-      <button type="button" id="new-game">New Game</button>
+      <div id="game-play">
+        <div class="game-board">
+          <div>
+            <div data-id="0"></div>
+            <div data-id="1"></div>
+            <div data-id="2"></div>
+          </div>
+          <div>
+            <div data-id="3"></div>
+            <div data-id="4"></div>
+            <div data-id="5"></div>
+          </div>
+          <div>
+            <div data-id="6"></div>
+            <div data-id="7"></div>
+            <div data-id="8"></div>
+          </div>
+        </div>
 
-      <div class="game-board">
-        <div>
-          <div data-id="0"></div>
-          <div data-id="1"></div>
-          <div data-id="2"></div>
-        </div>
-        <div>
-          <div data-id="3"></div>
-          <div data-id="4"></div>
-          <div data-id="5"></div>
-        </div>
-        <div>
-          <div data-id="6"></div>
-          <div data-id="7"></div>
-          <div data-id="8"></div>
-        </div>
+        <button type="button" id="new-game">New Game</button>
       </div>
 
     </body>
