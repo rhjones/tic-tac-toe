@@ -14,3 +14,11 @@
     content: "";
     display: table;
 }
+
+.game-board > div {
+  @extend .game-board-row;
+  & > div {
+    @extend .cell;
+  }
+}
+
