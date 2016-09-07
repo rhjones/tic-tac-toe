@@ -42,7 +42,24 @@ const takeTurn = (id) => {
   });
 };
 
+const endGame = () => {
+  let request = $.ajax({
+    url: app.host + '/games/' + game.currentGame.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {
+      game: {
+        over: true,
+      },
+    },
+  });
+  return request;
+};
+
 module.exports = {
   createGame,
   takeTurn,
+  endGame,
 };

@@ -11,6 +11,20 @@ const onCreateGame = () => {
     .fail(ui.failure);
 };
 
+const makeMove = (data) => {
+  let result = gameLogic.takeTurnSuccess(data);
+  if (result === 'x') {
+    console.log('x won!');
+    api.endGame()
+      .done(ui.success)
+      .fail(ui.failure);
+  } else if (result === 'o') {
+    console.log('o won!');
+  } else if (result === 'tie') {
+    console.log('tie!');
+  }
+};
+
 const onClickCell = () => {
   console.log('click!');
   event.preventDefault();
@@ -19,7 +33,7 @@ const onClickCell = () => {
   let id = cell.data('id');
   if (gameLogic.isEmpty(id)) {
     api.takeTurn(id)
-      .done(gameLogic.takeTurnSuccess)
+      .done(makeMove)
       .fail(ui.failure);
   } else {
     console.log('cell is taken');

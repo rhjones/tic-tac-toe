@@ -83,15 +83,17 @@ const takeTurnSuccess = (data) => {
   if (checkWin(id)) {
     console.log('game is won!');
     if (game.xTurn) {
-      console.log('x won!');
+      return 'x';
     } else {
-      console.log('o won!');
+      return 'o';
     }
   } else if (game.currentGameMoves === 9 && !checkWin(id)) {
-    console.log('game is a tie!');
+    return 'tie';
   } else {
     // move on to next player's turn
     game.xTurn = !game.xTurn;
+    // do I need this?
+    return false;
   }
 };
 
