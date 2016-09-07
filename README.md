@@ -23,13 +23,13 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
   * ~~start a game~~
   * ~~play a game~~
   * ~~prevent repeat moves~~
-  * win a game
+  * ~~win a game~~
     * ~~locally~~
-    * submit a PATCH request to "officially" win
-    * prevent additonal moves
+    * ~~submit a PATCH request to "officially" win~~
+    * ~~prevent additonal moves~~
   * track wins/losses
 * Write jQuery code to handle browser interaction.
-* Start communicating with the back-end using curl. Use this to begin writing your AJAX code.
+* ~~Start communicating with the back-end using curl. Use this to begin writing your AJAX code.~~
 * Add any additional features to your app.
 * Finish your documentation. Make it high-quality.
 
