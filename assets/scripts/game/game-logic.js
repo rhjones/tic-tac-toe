@@ -68,6 +68,19 @@ const checkWin = (id) => {
   }
 };
 
+const isOver = (id) => {
+  if (game.currentGameMoves >= 5 && checkWin(id)) {
+    game.winner = game.xTurn ? 'x' : 'o';
+    return true;
+  } else if (game.currentGameMoves === 9 && !checkWin(id)) {
+    game.winner = 'tie';
+    return true;
+  } else {
+    game.xTurn = !game.xTurn;
+    return false;
+  }
+};
+
 const takeTurnSuccess = (data) => {
   console.log(data);
   game.currentGame = data.game;
@@ -76,20 +89,8 @@ const takeTurnSuccess = (data) => {
   console.log('current moves', game.currentGameMoves);
   ui.markCell(id);
 
-  // if it's possible that someone has won, then check for a win/tie
-  if (game.currentGameMoves >= 5) {
-    checkWin(id);
-  }
+  return isOver(id);
 
-  if (checkWin(id)) {
-    console.log('game is won!');
-    return true;
-  } else if (game.currentGameMoves === 9 && !checkWin(id)) {
-    return 'tie';
-  } else {
-    game.xTurn = !game.xTurn;
-    return false;
-  }
 };
 
 const updateGame = (data) => {
