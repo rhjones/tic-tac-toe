@@ -15,8 +15,16 @@ const logInSuccess = (data) => {
   app.user = data.user;
 };
 
+const toggleAuth = () => {
+  $('#sign-up-link').toggle();
+  $('#log-in-link').toggle();
+  $('#log-in').toggle('fast');
+  $('#sign-up').toggle('fast');
+};
+
 module.exports = {
   failure,
   success,
   logInSuccess,
+  toggleAuth,
 };
