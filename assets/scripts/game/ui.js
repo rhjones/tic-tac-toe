@@ -2,11 +2,11 @@
 
 const game = require('./game');
 
-const success = (data) => {
-  console.log(data);
-};
-
 const failure = (error) => {
+  // currently covers:
+  // - api.createGame.fail
+  // - api.endGame.fail
+  // - api.takeTurn.fail
   console.error(error);
 };
 
@@ -15,6 +15,14 @@ const clearCells = () => {
     let cell = $('.game-board').find("[data-id='" + i + "']");
     cell.html('');
   }
+};
+
+const endGame = () => {
+  console.log('winner is', game.winner);
+};
+
+const invalidMove = () => {
+  console.log('bad move');
 };
 
 const markCell = (id) => {
@@ -31,7 +39,8 @@ const markCell = (id) => {
 
 module.exports = {
   failure,
-  success,
+  clearCells,
+  endGame,
+  invalidMove,
   markCell,
-  clearCells
 };
