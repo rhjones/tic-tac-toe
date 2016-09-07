@@ -16,7 +16,7 @@ const onClickCell = () => {
   let id = cell.data('id');
   if(ui.isEmpty(id)) {
     api.takeTurn(id)
-      .done(ui.markCell)
+      .done(ui.takeTurnSuccess)
       .fail(ui.failure);
   } else {
     console.log('cell is taken');

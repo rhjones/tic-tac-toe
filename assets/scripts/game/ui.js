@@ -15,7 +15,17 @@ const createGameSuccess = (data) => {
   app.game = data.game;
 };
 
-const markCell = (cell) => {
+const isEmpty = (id) => {
+  console.log(id);
+  console.log(app.game.cells);
+  console.log(app.game.cells[id]);
+  return (!app.game.cells[id]);
+};
+
+const markCell = (id) => {
+  console.log('turn success!');
+  let cell = $('.game-board').find( "[data-id='" + id + "']");
+  console.log(cell);
   if (app.x_turn) {
     cell.html('x');
   } else if (!app.x_turn) {
@@ -24,8 +34,10 @@ const markCell = (cell) => {
   app.x_turn = !app.x_turn;
 };
 
-const isEmpty = (id) => {
-  return (!app.game.cells[id]);
+const takeTurnSuccess = (data) => {
+  console.log(data);
+  app.game = data.game;
+  markCell(app.currentCellId);
 };
 
 module.exports = {
@@ -34,4 +46,5 @@ module.exports = {
   createGameSuccess,
   isEmpty,
   markCell,
+  takeTurnSuccess,
 };
