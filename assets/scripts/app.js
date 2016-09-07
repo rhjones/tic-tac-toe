@@ -2,7 +2,8 @@
 
 const app = {
   host: 'http://tic-tac-toe.wdibos.com',
-  x_turn: true,
+  xTurn: true,
+  currentGameMoves: 0,
 };
 
 module.exports = app;
