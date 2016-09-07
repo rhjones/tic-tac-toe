@@ -2,6 +2,10 @@
 
 const app = require('../app');
 
+const message = (messageId) => {
+  $(messageId).show().delay(3000).fadeToggle('slow');
+};
+
 const success = (data) => {
   console.log(data);
 };
@@ -10,8 +14,8 @@ const failure = (error) => {
   console.error(error);
 };
 
-const message = (messageId) => {
-  $(messageId).show().delay(3000).fadeToggle('slow');
+const signUpFailure = () => {
+  message('#sign-up-fail');
 };
 
 const toggleAuth = () => {
@@ -55,4 +59,5 @@ module.exports = {
   toggleAuthOptions,
   toggleChangePassword,
   passwordChangeSuccess,
+  signUpFailure,
 };

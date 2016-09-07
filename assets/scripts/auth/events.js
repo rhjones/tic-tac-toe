@@ -6,11 +6,15 @@ const ui = require('./ui');
 
 const onSignUp = (event) => {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  console.log(data);
-  api.signUp(data)
-    .done(ui.success)
-    .fail(ui.failure);
+  let originalData = getFormFields(event.target);
+  console.log(originalData);
+  api.signUp(originalData)
+    .done(
+      api.logIn(originalData)
+        .done(ui.logInSuccess)
+        .fail(ui.failure)
+      )
+    .fail(ui.signUpFailure);
 };
 
 const onLogIn = (event) => {
