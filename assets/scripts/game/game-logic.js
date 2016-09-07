@@ -9,11 +9,12 @@ const createGameSuccess = (data) => {
   game.currentGame = data.game;
 };
 
-const isEmpty = (id) => {
+const isValidMove = (id) => {
   console.log(id);
   console.log(game.currentGame.cells);
-  console.log(game.currentGame.cells[id]);
-  return (!game.currentGame.cells[id]);
+  console.log('current value of cell is', game.currentGame.cells[id]);
+  console.log('game is over?', game.currentGame.over);
+  return (!game.currentGame.cells[id] && !game.currentGame.over);
 };
 
 const checkRows = (cells, id) => {
@@ -91,8 +92,13 @@ const takeTurnSuccess = (data) => {
   }
 };
 
+const updateGame = (data) => {
+  game.currentGame = data.game;
+};
+
 module.exports = {
   createGameSuccess,
-  isEmpty,
+  isValidMove,
   takeTurnSuccess,
+  updateGame,
 };

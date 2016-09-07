@@ -16,7 +16,7 @@ const makeMove = (data) => {
   // if result is true or 'tie' (but not false)
   if (result) {
     api.endGame()
-      .done(ui.success)
+      .done(gameLogic.updateGame)
       .fail(ui.failure);
   }
 };
@@ -27,7 +27,7 @@ const onClickCell = () => {
   let cell = $(event.target);
   console.log('cell is', cell);
   let id = cell.data('id');
-  if (gameLogic.isEmpty(id)) {
+  if (gameLogic.isValidMove(id)) {
     api.takeTurn(id)
       .done(makeMove)
       .fail(ui.failure);
