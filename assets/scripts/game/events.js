@@ -19,7 +19,7 @@ const onClickCell = () => {
   let id = cell.data('id');
   if (gameLogic.isEmpty(id)) {
     api.takeTurn(id)
-      .done(ui.takeTurnSuccess)
+      .done(gameLogic.takeTurnSuccess)
       .fail(ui.failure);
   } else {
     console.log('cell is taken');
