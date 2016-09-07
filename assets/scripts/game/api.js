@@ -22,7 +22,6 @@ const createGame = () => {
 };
 
 const takeTurn = (id) => {
-  // should this happen here or in ui.isEmpty?
   game.currentCellId = id;
   let turn = game.xTurn ? 'x' : 'o';
   return $.ajax({

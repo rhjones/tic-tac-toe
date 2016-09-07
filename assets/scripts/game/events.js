@@ -13,15 +13,11 @@ const onCreateGame = () => {
 
 const makeMove = (data) => {
   let result = gameLogic.takeTurnSuccess(data);
-  if (result === 'x') {
-    console.log('x won!');
+  // if result is true or 'tie' (but not false)
+  if (result) {
     api.endGame()
       .done(ui.success)
       .fail(ui.failure);
-  } else if (result === 'o') {
-    console.log('o won!');
-  } else if (result === 'tie') {
-    console.log('tie!');
   }
 };
 
