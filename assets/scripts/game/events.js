@@ -12,9 +12,9 @@ const onCreateGame = () => {
 
 const onClickCell = () => {
   event.preventDefault();
-  let cell = $(event.target);
-  let id = cell.data('id');
-  if(ui.isEmpty(id)) {
+  let $cell = $(event.target);
+  let id = $cell.data('id');
+  if (ui.isEmpty(id)) {
     api.takeTurn(id)
       .done(ui.takeTurnSuccess)
       .fail(ui.failure);

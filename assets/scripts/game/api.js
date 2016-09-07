@@ -16,7 +16,7 @@ const createGame = () => {
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,
-    }
+    },
   });
 };
 
@@ -31,12 +31,12 @@ const takeTurn = (id) => {
       Authorization: 'Token token=' + app.user.token,
     },
     data: {
-      "game": {
-        "cell": {
-          "index": id,
-          "value": turn,
-        }
-      }
+      game: {
+        cell: {
+          index: id,
+          value: turn,
+        },
+      },
     },
   });
 };
