@@ -26,7 +26,7 @@ const takeTurn = (id) => {
   game.currentCellId = id;
   let turn = game.xTurn ? 'x' : 'o';
   return $.ajax({
-    url: app.host + '/games/' + app.game.id,
+    url: app.host + '/games/' + game.currentGame.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
