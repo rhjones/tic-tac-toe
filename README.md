@@ -22,7 +22,7 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
   * ~~create game board~~
   * ~~start a game~~
   * ~~play a game~~
-  * prevent repeat moves
+  * ~~prevent repeat moves~~
   * win a game
     * prevent additonal moves
   * track wins/losses
