@@ -2,22 +2,22 @@
 
 const api = require('./api');
 const ui = require('./ui');
-const gameLogic = require('./game-logic');
+const logic = require('./logic');
 
 const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
-    .done(gameLogic.createGameSuccess)
+    .done(logic.createGameSuccess)
     .fail(ui.failure);
 };
 
 const onEndGameSuccess = (data) => {
-  gameLogic.updateGame(data);
+  logic.updateGame(data);
   ui.endGame();
 };
 
 const makeMove = (data) => {
-  let result = gameLogic.takeTurnSuccess(data);
+  let result = logic.takeTurnSuccess(data);
   // if result is true or 'tie' (but not false)
   if (result) {
     api.endGame()
@@ -32,7 +32,7 @@ const onClickCell = () => {
   let cell = $(event.target);
   console.log('cell is', cell);
   let id = cell.data('id');
-  if (gameLogic.isValidMove(id)) {
+  if (logic.isValidMove(id)) {
     api.takeTurn(id)
       .done(makeMove)
       .fail(ui.failure);
