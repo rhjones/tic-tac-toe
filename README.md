@@ -24,6 +24,8 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
   * ~~play a game~~
   * ~~prevent repeat moves~~
   * win a game
+    * ~~locally~~
+    * submit a PATCH request to "officially" win
     * prevent additonal moves
   * track wins/losses
 * Write jQuery code to handle browser interaction.
