@@ -24,7 +24,7 @@ const onLogIn = (event) => {
 const onLogOut = (event) => {
   event.preventDefault();
   api.logOut()
-    .done(ui.success)
+    .done(ui.logOutSuccess)
     .fail(ui.failure);
 };
 
