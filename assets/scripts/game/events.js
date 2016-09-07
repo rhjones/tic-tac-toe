@@ -2,19 +2,22 @@
 
 const api = require('./api');
 const ui = require('./ui');
+const gameLogic = require('./game-logic');
 
 const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
-    .done(ui.createGameSuccess)
+    .done(gameLogic.createGameSuccess)
     .fail(ui.failure);
 };
 
 const onClickCell = () => {
+  console.log('click!');
   event.preventDefault();
-  let $cell = $(event.target);
-  let id = $cell.data('id');
-  if (ui.isEmpty(id)) {
+  let cell = $(event.target);
+  console.log('cell is', cell);
+  let id = cell.data('id');
+  if (gameLogic.isEmpty(id)) {
     api.takeTurn(id)
       .done(ui.takeTurnSuccess)
       .fail(ui.failure);
@@ -25,7 +28,7 @@ const onClickCell = () => {
 
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame);
-  $('.cell').on('click', onClickCell);
+  $('.game-board > div > div').on('click', onClickCell);
 };
 
 module.exports = {

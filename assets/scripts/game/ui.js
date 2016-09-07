@@ -17,19 +17,6 @@ const clearCells = () => {
   }
 };
 
-const createGameSuccess = (data) => {
-  console.log(data);
-  clearCells();
-  game.currentGame = game.currentGame;
-};
-
-const isEmpty = (id) => {
-  console.log(id);
-  console.log(game.currentGame.cells);
-  console.log(game.currentGame.cells[id]);
-  return (!game.currentGame.cells[id]);
-};
-
 const checkRows = (cells, id) => {
   if ([0, 1, 2].indexOf(id) > -1) {
     return ((cells[0] === cells[1]) && (cells[1] === cells[2]));
@@ -122,8 +109,7 @@ const takeTurnSuccess = (data) => {
 module.exports = {
   failure,
   success,
-  createGameSuccess,
-  isEmpty,
   markCell,
   takeTurnSuccess,
+  clearCells
 };
