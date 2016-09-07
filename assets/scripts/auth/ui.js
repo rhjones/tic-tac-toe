@@ -11,11 +11,11 @@ const failure = (error) => {
 };
 
 const logInSuccess = (data) => {
-  console.log(data);
   app.user = data.user;
+
 };
 
-const toggleAuth = () => {
+const toggleAuthOptions = () => {
   $('#sign-up-link').toggle();
   $('#log-in-link').toggle();
   $('#log-in').toggle('fast');
@@ -26,5 +26,5 @@ module.exports = {
   failure,
   success,
   logInSuccess,
-  toggleAuth,
+  toggleAuthOptions,
 };

@@ -36,8 +36,8 @@ const onChangePassword = (event) => {
     .fail(ui.failure);
 };
 
-const onToggleAuth = () => {
-  ui.toggleAuth();
+const onToggleAuthOptions = () => {
+  ui.toggleAuthOptions();
 };
 
 const addHandlers = () => {
@@ -45,8 +45,8 @@ const addHandlers = () => {
   $('#log-in').on('submit', onLogIn);
   $('#log-out').on('click', onLogOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#sign-up-link').on('click', onToggleAuth);
-  $('#log-in-link').on('click', onToggleAuth);
+  $('#sign-up-link').on('click', onToggleAuthOptions);
+  $('#log-in-link').on('click', onToggleAuthOptions);
 };
 
 module.exports = {
