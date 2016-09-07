@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('../app');
+const game = require('./game');
 
 const success = (data) => {
   console.log(data);
@@ -20,14 +20,14 @@ const clearCells = () => {
 const createGameSuccess = (data) => {
   console.log(data);
   clearCells();
-  app.game = data.game;
+  game.currentGame = game.currentGame;
 };
 
 const isEmpty = (id) => {
   console.log(id);
-  console.log(app.game.cells);
-  console.log(app.game.cells[id]);
-  return (!app.game.cells[id]);
+  console.log(game.currentGame.cells);
+  console.log(game.currentGame.cells[id]);
+  return (!game.currentGame.cells[id]);
 };
 
 const checkRows = (cells, id) => {
@@ -66,7 +66,7 @@ const checkDiagonals = (cells, id) => {
 };
 
 const checkWin = (id) => {
-  let cells = app.game.cells;
+  let cells = game.currentGame.cells;
   console.log('checking for a win using cell', id);
   if (checkRows(cells, id)) {
     return true;
@@ -84,38 +84,38 @@ const checkWin = (id) => {
 const markCell = (id) => {
   console.log('turn success!');
   let cell = $('.game-board').find("[data-id='" + id + "']");
-  if (app.xTurn) {
+  if (game.xTurn) {
     cell.html('x');
-  } else if (!app.xTurn) {
+  } else if (!game.xTurn) {
     cell.html('o');
   }
 };
 
 const takeTurnSuccess = (data) => {
   console.log(data);
-  app.game = data.game;
-  app.currentGameMoves++;
-  let id = app.currentCellId;
-  console.log('current moves', app.currentGameMoves);
+  game.currentGame = data.game;
+  game.currentGameMoves++;
+  let id = game.currentCellId;
+  console.log('current moves', game.currentGameMoves);
   markCell(id);
 
   // if it's possible that someone has won, then check for a win/tie
-  if (app.currentGameMoves >= 5) {
+  if (game.currentGameMoves >= 5) {
     checkWin(id);
   }
 
   if (checkWin(id)) {
     console.log('game is won!');
-    if (app.xTurn === 'x') {
+    if (game.xTurn === 'x') {
       console.log('x won!');
     } else {
       console.log('y won!');
     }
-  } else if (app.currentGameMoves === 9 && !checkWin(id)) {
+  } else if (game.currentGameMoves === 9 && !checkWin(id)) {
     console.log('game is a tie!');
   } else {
     // move on to next player's turn
-    app.xTurn = !app.xTurn;
+    game.xTurn = !game.xTurn;
   }
 };
 

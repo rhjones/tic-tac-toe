@@ -1,12 +1,13 @@
 'use strict';
 
 const app = require('../app');
+const game = require('./game');
 
 const gameReset = () => {
-  app.currentCellId = null;
-  app.game = null;
-  app.xTurn = true;
-  app.currentGameMoves = 0;
+  game.currentCellId = null;
+  game.currentGame = null;
+  game.xTurn = true;
+  game.currentGameMoves = 0;
 };
 
 const createGame = () => {
@@ -22,8 +23,8 @@ const createGame = () => {
 
 const takeTurn = (id) => {
   // should this happen here or in ui.isEmpty?
-  app.currentCellId = id;
-  let turn = app.xTurn ? 'x' : 'o';
+  game.currentCellId = id;
+  let turn = game.xTurn ? 'x' : 'o';
   return $.ajax({
     url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
