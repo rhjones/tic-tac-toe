@@ -6,16 +6,20 @@ const message = (messageId) => {
   $(messageId).show().delay(3000).fadeToggle('slow');
 };
 
-const success = (data) => {
-  console.log(data);
-};
-
-const failure = (error) => {
-  console.error(error);
-};
-
 const signUpFailure = () => {
   message('#sign-up-fail');
+};
+
+const logInFailure = () => {
+  message('#log-in-fail');
+};
+
+const logOutFailure = () => {
+  message('#log-out-fail');
+};
+
+const passwordChangeFailure = () => {
+  message('#password-change-fail');
 };
 
 const toggleAuth = () => {
@@ -52,12 +56,13 @@ const passwordChangeSuccess = () => {
 };
 
 module.exports = {
-  failure,
-  success,
   logInSuccess,
   logOutSuccess,
   toggleAuthOptions,
   toggleChangePassword,
   passwordChangeSuccess,
   signUpFailure,
+  logInFailure,
+  logOutFailure,
+  passwordChangeFailure,
 };

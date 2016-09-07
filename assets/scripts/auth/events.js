@@ -12,7 +12,7 @@ const onSignUp = (event) => {
     .done(
       api.logIn(originalData)
         .done(ui.logInSuccess)
-        .fail(ui.failure)
+        .fail(ui.logInFailure)
       )
     .fail(ui.signUpFailure);
 };
@@ -22,14 +22,14 @@ const onLogIn = (event) => {
   let data = getFormFields(event.target);
   api.logIn(data)
     .done(ui.logInSuccess)
-    .fail(ui.failure);
+    .fail(ui.logInFailure);
 };
 
 const onLogOut = (event) => {
   event.preventDefault();
   api.logOut()
     .done(ui.logOutSuccess)
-    .fail(ui.failure);
+    .fail(ui.logOutFailure);
 };
 
 const onChangePassword = (event) => {
@@ -37,7 +37,7 @@ const onChangePassword = (event) => {
   let data = getFormFields(event.target);
   api.changePassword(data)
     .done(ui.passwordChangeSuccess)
-    .fail(ui.failure);
+    .fail(ui.passwordChangeFailure);
 };
 
 const onToggleAuthOptions = () => {
