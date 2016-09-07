@@ -26,12 +26,12 @@ const markCell = (id) => {
   console.log('turn success!');
   let cell = $('.game-board').find( "[data-id='" + id + "']");
   console.log(cell);
-  if (app.x_turn) {
+  if (app.xTurn) {
     cell.html('x');
-  } else if (!app.x_turn) {
+  } else if (!app.xTurn) {
     cell.html('o');
   }
-  app.x_turn = !app.x_turn;
+  app.xTurn = !app.xTurn;
 };
 
 const takeTurnSuccess = (data) => {
