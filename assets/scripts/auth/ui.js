@@ -72,9 +72,9 @@ const passwordChangeSuccess = () => {
 
 const displayStats = (data) => {
   let stats = gameLogic.calculateGameStats(data);
-  $('.wins').text(stats.wins);
-  $('.losses').text(stats.losses);
-  $('.ties').text(stats.ties);
+  $('.win > .count').text(stats.wins);
+  $('.lose > .count').text(stats.losses);
+  $('.tie > .count').text(stats.ties);
 };
 
 
