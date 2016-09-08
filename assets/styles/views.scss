@@ -1,5 +1,3 @@
-$navbar-height: 30px;
-
 // INITIAL VIEW STATE
 .user-buttons, #sign-up, #log-in-link, #change-password, .game-play, .message {
   display: none;
@@ -9,12 +7,14 @@ $navbar-height: 30px;
 
 body {
   margin-top: $navbar-height;
+  min-width: $min-width;
 }
 
 nav {
   height: $navbar-height;
   background: #DDD;
   width: 100%;
+  min-width: $min-width;
   position: absolute;
   top: 0;
 }
