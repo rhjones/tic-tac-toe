@@ -2,6 +2,7 @@
 
 const game = require('./game');
 const ui = require('./ui');
+const app = require('../app');
 
 const createGameSuccess = (data) => {
   console.log(data);
@@ -52,8 +53,7 @@ const checkDiagonals = (cells, id) => {
   return win;
 };
 
-const checkWin = (id) => {
-  let cells = game.currentGame.cells;
+const checkWin = (cells, id) => {
   console.log('checking for a win using cell', id);
   if (checkRows(cells, id)) {
     return true;
@@ -69,10 +69,10 @@ const checkWin = (id) => {
 };
 
 const isOver = (id) => {
-  if (game.currentGameMoves >= 5 && checkWin(id)) {
+  if (game.currentGameMoves >= 5 && checkWin(game.currentGame.cells, id)) {
     game.winner = game.xTurn ? 'x' : 'o';
     return true;
-  } else if (game.currentGameMoves === 9 && !checkWin(id)) {
+  } else if (game.currentGameMoves === 9 && !checkWin(game.currentGame.cells, id)) {
     game.winner = 'tie';
     return true;
   } else {
@@ -90,11 +90,50 @@ const takeTurnSuccess = (data) => {
   ui.markCell(id);
 
   return isOver(id);
-
 };
 
 const updateGame = (data) => {
   game.currentGame = data.game;
+};
+
+const findWinner = (game) => {
+  let possibleWinners = [0, 1, 2, 3, 6];
+  let won = false;
+  for (let i = 0, max = possibleWinners.length; i < max; i++) {
+    if(checkWin(game.cells, i)) {
+      if (game.cells[i] === 'x') {
+        won = game.player_x.id;
+      } else if (game.cells[i] === 'o') {
+        won = game.player_o ? game.player_o.id : 'o';
+      }
+      break;
+    }
+  }
+  return won;
+};
+
+const calculateGameStats = (data) => {
+  console.log('in calculate game stats');
+  console.log('total games:', data.games.length);
+  let stats = {
+    win: 0,
+    loss: 0,
+    tie: 0,
+  };
+  let games = data.games; // games is an array
+  for (let i = 0, max = games.length; i < max; i++) {
+    if (findWinner(games[i]) === app.user.id) {
+      stats.win++;
+    } else if (findWinner(games[i])) {
+      stats.loss++;
+    } else {
+      stats.tie++;
+    }
+  }
+  console.log(stats);
+
+  // console.log(data);
+
 };
 
 module.exports = {
@@ -102,4 +141,5 @@ module.exports = {
   isValidMove,
   takeTurnSuccess,
   updateGame,
+  calculateGameStats,
 };
