@@ -2,3 +2,29 @@ $unit: 75px;
 $game-board-width: 3 * $unit;
 $min-width: $game-board-width + 30px;
 $navbar-height: 30px;
+
+// TEMPLATE
+
+body {
+  margin-top: $navbar-height;
+  min-width: $min-width;
+}
+
+nav {
+  background: $gray;
+  height: $navbar-height;
+  min-width: $min-width;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.auth-buttons,
+.user-buttons {
+  float: right;
+}
+
+form {
+  margin: 0 auto;
+  width: 225px;
+}
