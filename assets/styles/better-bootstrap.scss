@@ -11,8 +11,3 @@ form > div {
 input {
   @extend .form-control;
 }
-
-button {
-  @extend .btn;
-  @extend .btn-default;
-}

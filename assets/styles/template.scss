@@ -3,6 +3,7 @@ $game-board-width: 3 * $unit;
 $min-width: $game-board-width + 30px;
 $bar-height: 30px;
 $link-padding: ($bar-height - $font-size) / 2;
+$form-element-height: 40px;
 
 // TEMPLATE
 
@@ -21,17 +22,21 @@ footer {
   width: 100%;
 }
 
+nav a,
+button {
+  line-height: $custom-line-height;
+  padding: $link-padding;
+  color: $white;
+}
+
 nav {
   background: $aqua;
   top: 0;
 
   a {
     background: $teal;
-    color: $white;
-    padding: $link-padding;
     display: block;
     float: right;
-    line-height: $custom-line-height;
 
     &:hover {
       text-decoration: none;
@@ -39,7 +44,8 @@ nav {
       background-color: $teal-shade;
     }
 
-    &.log-out {
+    &.log-out,
+    &.log-in-link {
       background-color: $lightorange;
 
       &:hover {
@@ -75,6 +81,36 @@ input {
   background-color: $white;
   border: 1px solid $white;
   box-shadow: none;
+  font-size: $input-font-size;
+  line-height: $custom-line-height;
+  height: $form-element-height;
+}
+
+label {
+  display: none;
+}
+
+button {
+  width: 100%;
+  box-shadow: none;
+  border: 0;
+  height: $form-element-height;
+}
+
+#log-in button {
+  background: $lightorange;
+
+  &:hover {
+    background: $darkorange;
+  }
+}
+
+#sign-up button {
+  background: $teal;
+
+  &:hover {
+    background: $teal-shade;
+  }
 }
 
 
