@@ -28,7 +28,7 @@ const toggleChangePassword = () => {
 };
 
 const toggleStats = () => {
-  $('.stats').toggle();
+  $('.stats').toggleClass('inline-block');
 };
 
 // AJAX FAILURE
