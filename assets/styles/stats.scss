@@ -1,0 +1,34 @@
+/**
+ * Easy trapezoids with 3D transforms
+ * Based on CSS by Lea Verou
+ * http://lea.verou.me/2013/10/slanted-tabs-with-css-3d-transforms/
+ */
+
+.stats {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  height: $bar-height;
+  padding: $link-padding;
+  margin: 0 auto;
+  line-height: $custom-line-height;
+  color: $darkgray;
+
+  &::before {
+    content: ''; /* To generate the box */
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    background: $aqua;
+    transform: perspective(4px) rotateX(1deg);
+  }
+
+  > span {
+    padding: 0 10px;
+  }
+
+  &.tab::before {
+    /* Tip by @krofdrakula */
+    border-radius: 15px 15px 0 0;
+  }
+}
