@@ -1,0 +1,23 @@
+$body-font: 'Open Sans', sans-serif;
+$header-font: 'Montserrat', sans-serif;
+$font-size: 14px;
+$custom-line-height: 1;
+
+body {
+  font-family: $body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: $header-font;
+}
+
+nav a,
+button {
+  text-transform: uppercase;
+}
