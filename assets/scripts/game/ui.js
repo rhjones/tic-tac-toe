@@ -35,8 +35,6 @@ const markCell = (id) => {
   }
 };
 
-
-
 module.exports = {
   failure,
   clearCells,

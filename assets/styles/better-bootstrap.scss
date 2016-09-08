@@ -13,5 +13,6 @@ input {
 }
 
 button {
-  @extend .btn, .btn-default;
+  @extend .btn;
+  @extend .btn-default;
 }

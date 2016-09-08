@@ -18,6 +18,7 @@ const onEndGameSuccess = (data) => {
 
 const makeMove = (data) => {
   let result = logic.takeTurnSuccess(data);
+
   // if result is true or 'tie' (but not false)
   if (result) {
     api.endGame()
@@ -29,9 +30,7 @@ const makeMove = (data) => {
 const onClickCell = () => {
   console.log('click!');
   event.preventDefault();
-  let cell = $(event.target);
-  console.log('cell is', cell);
-  let id = cell.data('id');
+  let id = $(event.target).data('id');
   if (logic.isValidMove(id)) {
     api.takeTurn(id)
       .done(makeMove)

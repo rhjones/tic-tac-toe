@@ -1,18 +1,23 @@
-@media (min-width: 768px) {
+@import 'breakpoint';
+
+@include breakpoint(sm) {
   .cell {
-    width: 100px;
     height: 100px;
+    width: 100px;
   }
-  .game-board, form {
+
+  .game-board,
+  form {
     width: 300px;
   }
 }
 
-@media (min-width: 992px) {
+@include breakpoint(md) {
   .cell {
-    width: 125px;
     height: 125px;
+    width: 125px;
   }
+
   .game-board {
     width: 375px;
   }

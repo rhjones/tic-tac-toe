@@ -1,5 +1,10 @@
 // INITIAL VIEW STATE
-.user-buttons, #sign-up, #log-in-link, #change-password, .game-play, .message {
+.user-buttons,
+.sign-up,
+.log-in-link,
+.change-password,
+.game-play,
+.message {
   display: none;
 }
 
@@ -11,19 +16,20 @@ body {
 }
 
 nav {
+  background: $gray;
   height: $navbar-height;
-  background: #DDD;
-  width: 100%;
   min-width: $min-width;
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
-.auth-buttons, .user-buttons {
+.auth-buttons,
+.user-buttons {
   float: right;
 }
 
 form {
-  width: 225px;
   margin: 0 auto;
+  width: 225px;
 }

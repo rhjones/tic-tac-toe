@@ -1,27 +1,30 @@
-.cell {
-  width: $unit;
+%cell {
+  border: 1px solid $black;
+  float: left;
   height: $unit;
   text-align: center;
-  float: left;
-  border: 1px solid black;
+  width: $unit;
 }
 
-.game-board-row:after {
-    clear: both;
+%game-board-row::after {
+  clear: both;
 }
 
-.game-board-row:before, .game-board-row:after {
-    content: "";
-    display: table;
+%game-board-row::before,
+%game-board-row::after {
+  content: '';
+  display: table;
 }
 
 .game-board {
   margin: 0 auto;
   width: $game-board-width;
-  & > div {
-    @extend .game-board-row;
-    & > div {
-      @extend .cell;
+
+  > div {
+    @extend %game-board-row;
+
+    > div {
+      @extend %cell;
     }
   }
 }
