@@ -1,4 +1,9 @@
-%cell {
+// scss-lint doesn't like .cell (wants %cell)
+// because it's applied to divs via @extend
+// rather than hardcoded into the markup
+// but breakpoints don't work with %cell, only .cell
+
+.cell {
   border: 1px solid $black;
   float: left;
   height: $unit;
@@ -24,7 +29,7 @@
     @extend %game-board-row;
 
     > div {
-      @extend %cell;
+      @extend .cell;
     }
   }
 }

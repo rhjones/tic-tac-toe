@@ -1,6 +1,16 @@
 @import 'breakpoint';
 
+@include breakpoint(xs) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
 @include breakpoint(sm) {
+  h1 {
+    font-size: 64px;
+  }
+  
   .cell {
     height: 100px;
     width: 100px;

@@ -1,5 +1,6 @@
 $body-font: 'Open Sans', sans-serif;
 $header-font: 'Montserrat', sans-serif;
+$title-font: 'Montserrat Subrayada', sans-serif;
 $font-size: 14px;
 $custom-line-height: 1;
 $input-font-size: 16px;
@@ -8,7 +9,12 @@ body {
   font-family: $body-font;
 }
 
-h1,
+h1 {
+  font-family: $title-font;
+  text-transform: uppercase;
+  font-size: 35px;
+}
+
 h2,
 h3,
 h4,
@@ -18,8 +24,4 @@ button,
 nav a {
   font-family: $header-font;
   text-transform: uppercase;
-}
-
-h1 {
-  font-size: 48px;
 }

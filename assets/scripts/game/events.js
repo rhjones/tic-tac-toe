@@ -41,7 +41,7 @@ const onClickCell = () => {
 };
 
 const addHandlers = () => {
-  $('#new-game').on('click', onCreateGame);
+  $('.new-game').on('click', onCreateGame);
   $('.game-board > div > div').on('click', onClickCell);
 };
 

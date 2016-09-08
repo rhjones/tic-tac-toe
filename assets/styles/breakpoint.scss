@@ -2,8 +2,10 @@
 // Mixin is Tim Knight's, based on this article: http://bit.ly/2cbUipj
 
 @mixin breakpoint($class) {
-  @if $class == xs {
-    @media (max-width: 767px) { @content; }
+  @if $class == tiny {
+    @media (max-width: 400px) { @content; }
+  } @else if $class == xs {
+    @media (min-width: 401px) { @content; }
   } @else if $class == sm {
     @media (min-width: 768px) { @content; }
   } @else if $class == md {
@@ -11,6 +13,6 @@
   } @else if $class == lg {
     @media (min-width: 1200px) { @content; }
   } @else {
-    @warn 'Breakpoint mixin supports: xs, sm, md, lg';
+    @warn 'Breakpoint mixin supports: tiny, xs, sm, md, lg';
   }
 }
