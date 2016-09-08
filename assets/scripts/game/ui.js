@@ -29,9 +29,9 @@ const markCell = (id) => {
   console.log('turn success!');
   let cell = $('.game-board').find("[data-id='" + id + "']");
   if (game.xTurn) {
-    cell.html('x');
+    cell.html('<i class="fa fa-circle-o fa-5x x" aria-hidden="true"></i>');
   } else if (!game.xTurn) {
-    cell.html('o');
+    cell.html('<i class="fa fa-circle fa-5x o" aria-hidden="true"></i>');
   }
 };
 

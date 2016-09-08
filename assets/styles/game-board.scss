@@ -4,7 +4,6 @@
 // but breakpoints don't work with %cell, only .cell
 
 .cell {
-  border: 1px solid $black;
   float: left;
   height: $unit;
   text-align: center;
@@ -24,6 +23,8 @@
 .game-board {
   margin: 0 auto;
   width: $game-board-width;
+  background: $white;
+  @include border-radius(30px);
 
   > div {
     @extend %game-board-row;
@@ -32,5 +33,13 @@
       @extend .cell;
     }
   }
+}
+
+.x {
+  color: $darkorange;
+}
+
+.o {
+  color: $teal;
 }
 

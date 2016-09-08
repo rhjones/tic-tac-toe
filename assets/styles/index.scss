@@ -3,9 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import './font-awesome/scss/font-awesome';
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada|Open+Sans);
 
+@import './mixins';
 
 @import './colors';
 @import './typography';
+
 
 @import './template';
 
