@@ -8,6 +8,7 @@ const createGameSuccess = (data) => {
   console.log(data);
   ui.clearCells();
   game.currentGame = data.game;
+  ui.setPlayerX();
 };
 
 const isValidMove = (id) => {

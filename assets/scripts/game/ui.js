@@ -35,10 +35,21 @@ const markCell = (id) => {
   }
 };
 
+const setPlayerX = () => {
+  $('.fa-arrow-right').fadeIn('fast');
+};
+
+const indicatePlayer = () => {
+  $('.fa-arrow-right').fadeToggle('fast');
+  $('.fa-arrow-left').fadeToggle('fast');
+};
+
 module.exports = {
   failure,
   clearCells,
   endGame,
   invalidMove,
   markCell,
+  indicatePlayer,
+  setPlayerX,
 };

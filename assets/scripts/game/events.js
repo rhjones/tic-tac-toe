@@ -24,6 +24,8 @@ const makeMove = (data) => {
     api.endGame()
       .done(onEndGameSuccess)
       .fail(ui.failure);
+  } else {
+    ui.indicatePlayer();
   }
 };
 
