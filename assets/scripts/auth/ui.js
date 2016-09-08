@@ -9,9 +9,9 @@ const message = (messageId) => {
 };
 
 const toggleAuth = () => {
-  $('.auth-buttons').toggle();
+  $('.auth-nav').toggle();
   $('.auth-forms').toggle();
-  $('.user-buttons').toggle();
+  $('.user-nav').toggle();
   $('.game-play').toggle();
 };
 
