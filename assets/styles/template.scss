@@ -1,6 +1,6 @@
 $unit: 75px;
 $game-board-width: 3 * $unit;
-$min-width: $game-board-width + 30px;
+$min-width: 300px;
 $bar-height: 30px;
 $link-padding: ($bar-height - $font-size) / 2;
 $form-element-height: 40px;
@@ -115,11 +115,6 @@ button {
   &:hover {
     background: $teal-shade;
   }
-}
-
-.new-game {
-  width: $game-board-width;
-  margin: 20px auto;
 }
 
 
