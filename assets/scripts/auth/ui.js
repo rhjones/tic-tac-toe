@@ -16,8 +16,8 @@ const toggleAuth = () => {
 };
 
 const toggleAuthOptions = () => {
-  $('#sign-up-link').toggle();
-  $('#log-in-link').toggle();
+  $('.sign-up-link').toggleClass('hidden');
+  $('.log-in-link').toggleClass('inline-block');
   $('#log-in').toggle('fast');
   $('#sign-up').toggle('fast');
 };

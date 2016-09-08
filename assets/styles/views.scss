@@ -4,6 +4,11 @@
 .log-in-link,
 .change-password,
 .game-play,
-.message {
+.message,
+.hidden {
   display: none;
+}
+
+.inline-block {
+  display: inline-block;
 }
