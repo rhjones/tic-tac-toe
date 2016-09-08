@@ -10,6 +10,7 @@ body {
   margin-bottom: $bar-height;
   margin-top: $bar-height;
   min-width: $min-width;
+  background: $tan;
 }
 
 nav,
@@ -21,25 +22,29 @@ footer {
 }
 
 nav {
-  background: $gray;
+  background: $aqua;
   top: 0;
 
   a {
-    background: $lightblue;
+    background: $teal;
     color: $white;
     padding: $link-padding;
     display: block;
     float: right;
     line-height: $custom-line-height;
 
-    &.log-out {
-      background-color: $darkblue;
-    }
-
     &:hover {
       text-decoration: none;
       color: $white;
-      background-color: $lightgreen;
+      background-color: $teal-shade;
+    }
+
+    &.log-out {
+      background-color: $lightorange;
+
+      &:hover {
+        background-color: $darkorange;
+      }
     }
   }
 }
@@ -49,9 +54,27 @@ footer {
   @extend .text-center;
 }
 
+.messages {
+  margin: 20px 0;
+  height: 30px;
+}
+
+.message {
+  background: $lightorange;
+  color: $white;
+  padding: 5px;
+}
+
 form {
   margin: 0 auto;
   width: 225px;
+}
+
+input {
+  border-radius: 0;
+  background-color: $white;
+  border: 1px solid $white;
+  box-shadow: none;
 }
 
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const game = {
+let game = {
   xTurn: true,
   currentGameMoves: 0,
   currentCellId: null,

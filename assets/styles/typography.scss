@@ -13,11 +13,12 @@ h3,
 h4,
 h5,
 h6,
-button {
+button, 
+nav a {
   font-family: $header-font;
+  text-transform: uppercase;
 }
 
-nav a,
-button {
-  text-transform: uppercase;
+h1 {
+  font-size: 48px;
 }

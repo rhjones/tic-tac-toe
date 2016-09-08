@@ -1,7 +1,28 @@
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+
 $gray: #ddd;
 $black: #000;
-$white: #fff;
+$white: #fafafa;
+
+
 $darkblue: #143954;
 $lightblue: #62828f;
 $green: #468403;
 $lightgreen: #b1dd00;
+
+
+$tan: #f7f7be;
+$lightorange: #eea948;
+$darkorange: #f27b47;
+$teal: #197a81;
+$teal-shade: shade($teal, 20%);
+$aqua: #aad4b5;
+$darkgray: #97948a;
