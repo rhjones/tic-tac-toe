@@ -71,8 +71,10 @@ const passwordChangeSuccess = () => {
 // GAME STATS
 
 const displayStats = (data) => {
-  gameLogic.calculateGameStats(data);
-  console.log('in display stats');
+  let stats = gameLogic.calculateGameStats(data);
+  $('.wins').text(stats.wins);
+  $('.losses').text(stats.losses);
+  $('.ties').text(stats.ties);
 };
 
 

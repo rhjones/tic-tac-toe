@@ -54,7 +54,6 @@ const checkDiagonals = (cells, id) => {
 };
 
 const checkWin = (cells, id) => {
-  console.log('checking for a win using cell', id);
   if (checkRows(cells, id)) {
     return true;
   } else if (checkCols(cells, id)) {
@@ -113,27 +112,22 @@ const findWinner = (game) => {
 };
 
 const calculateGameStats = (data) => {
-  console.log('in calculate game stats');
-  console.log('total games:', data.games.length);
   let stats = {
-    win: 0,
-    loss: 0,
-    tie: 0,
+    wins: 0,
+    losses: 0,
+    ties: 0,
   };
   let games = data.games; // games is an array
   for (let i = 0, max = games.length; i < max; i++) {
     if (findWinner(games[i]) === app.user.id) {
-      stats.win++;
+      stats.wins++;
     } else if (findWinner(games[i])) {
-      stats.loss++;
+      stats.losses++;
     } else {
-      stats.tie++;
+      stats.ties++;
     }
   }
-  console.log(stats);
-
-  // console.log(data);
-
+  return stats;
 };
 
 module.exports = {
