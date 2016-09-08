@@ -4,6 +4,13 @@ const getFormFields = require('../../..//lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+const logIn = (data) => {
+  ui.logInSuccess(data);
+  api.getFinishedGames()
+    .done(ui.displayStats)
+    .fail();
+};
+
 const onSignUp = (event) => {
   event.preventDefault();
   let originalData = getFormFields(event.target);
@@ -11,7 +18,7 @@ const onSignUp = (event) => {
   api.signUp(originalData)
     .done(
       api.logIn(originalData)
-        .done(ui.logInSuccess)
+        .done(logIn)
         .fail(ui.logInFailure)
       )
     .fail(ui.signUpFailure);
@@ -21,7 +28,7 @@ const onLogIn = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.logIn(data)
-    .done(ui.logInSuccess)
+    .done(logIn)
     .fail(ui.logInFailure);
 };
 

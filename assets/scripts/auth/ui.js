@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app');
+const gameLogic = require('../game/logic.js');
 
 // GENERIC UI ACTIONS
 
@@ -26,6 +27,10 @@ const toggleChangePassword = () => {
   $('#change-password').toggle();
 };
 
+const toggleStats = () => {
+  $('.stats').toggle();
+};
+
 // AJAX FAILURE
 
 const logInFailure = () => {
@@ -49,10 +54,12 @@ const signUpFailure = () => {
 const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
+  toggleStats();
 };
 
 const logOutSuccess = () => {
   app.user = null;
+  toggleStats();
   toggleAuth();
 };
 
@@ -60,6 +67,14 @@ const passwordChangeSuccess = () => {
   toggleChangePassword();
   message('#password-changed');
 };
+
+// GAME STATS
+
+const displayStats = (data) => {
+  gameLogic.calculateGameStats(data);
+  console.log('in display stats');
+};
+
 
 module.exports = {
   toggleAuthOptions,
@@ -71,4 +86,5 @@ module.exports = {
   logInSuccess,
   logOutSuccess,
   passwordChangeSuccess,
+  displayStats,
 };

@@ -43,9 +43,21 @@ const changePassword = (data) => {
   return request;
 };
 
+const getFinishedGames = () => {
+  let request = $.ajax({
+    url: app.host + '/games/?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+  return request;
+};
+
 module.exports = {
   signUp,
   logIn,
   logOut,
   changePassword,
+  getFinishedGames,
 };
