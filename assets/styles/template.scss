@@ -106,12 +106,18 @@ button {
   }
 }
 
-#sign-up button {
+#sign-up button,
+.new-game {
   background: $teal;
 
   &:hover {
     background: $teal-shade;
   }
+}
+
+.new-game {
+  width: $game-board-width;
+  margin: 20px auto;
 }
 
 
