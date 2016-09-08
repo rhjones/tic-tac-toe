@@ -1,5 +1,15 @@
+main {
+  @extend .container-fluid;
+  @extend .text-center;
+}
+
 form > div {
   @extend .form-group;
+  @extend .text-left;
+}
+
+input {
+  @extend .form-control;
 }
 
 button {

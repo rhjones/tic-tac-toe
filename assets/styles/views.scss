@@ -1,3 +1,29 @@
+$navbar-height: 30px;
+
+// INITIAL VIEW STATE
 .user-buttons, #sign-up, #log-in-link, #change-password, .game-play, .message {
   display: none;
+}
+
+// TEMPLATE
+
+body {
+  margin-top: $navbar-height;
+}
+
+nav {
+  height: $navbar-height;
+  background: #DDD;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.auth-buttons, .user-buttons {
+  float: right;
+}
+
+form {
+  width: 225px;
+  margin: 0 auto;
 }

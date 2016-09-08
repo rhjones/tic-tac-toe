@@ -7,89 +7,94 @@
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      
-      <h1>Tic-Tac-Toe</h1>
+    <body>
+      <nav>
+        <div class="auth-buttons">
+          <button type="button" id="log-in-link">Log In</button>
+          <button type="button" id="sign-up-link">Sign Up</button>
+        </div>
 
-      <div class="auth-buttons">
-        <button type="button" id="log-in-link">Log In</button>
-        <button type="button" id="sign-up-link">Sign Up</button>
-      </div>
+        <div class="user-buttons">
+          <button type="button" id="change-password-link">Change Password</button>
+          <button type="button" id="log-out">Log Out</button>
+        </div>
+      </nav>
 
-      <div class="user-buttons">
-        <button type="button" id="change-password-link">Change Password</button>
-        <button type="button" id="log-out">Log Out</button>
-      </div>
+      <main>
+        
+        <h1>Tic-Tac-Toe</h1>
 
-      <div id="password-changed" class="message">Your password has been changed.</div>
-      <div id="sign-up-fail" class="message">Unable to create account.</div>
-      <div id="log-in-fail" class="message">Unable to log in.</div>
-      <div id="log-out-fail" class="message">Unable to log out.</div>
-      <div id="password-change-fail" class="message">Unable to log out.</div>
+        <div id="password-changed" class="message">Your password has been changed.</div>
+        <div id="sign-up-fail" class="message">Unable to create account.</div>
+        <div id="log-in-fail" class="message">Unable to log in.</div>
+        <div id="log-out-fail" class="message">Unable to log out.</div>
+        <div id="password-change-fail" class="message">Unable to log out.</div>
 
-      <div class="auth-forms">
-        <form id="sign-up">
+        <div class="auth-forms">
+          <form id="sign-up">
+            <div>
+              <label for="credentials[email]">Email</label>
+              <input name="credentials[email]" id="credentials[email]" type="text" placeholder="Email">
+            </div>
+            <div>
+              <label for="credentials[password]">Password</label>
+              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password">
+            </div>
+            <div>
+              <label for="credentials[password_confirmation]">Confirm password</label>
+              <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password">
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <form id="log-in">
+            <div>
+              <label for="credentials[email]">Email</label>
+              <input name="credentials[email]" id="credentials[email]" type="text" placeholder="Email">
+            </div>
+            <div>
+              <label for="credentials[password]">Password</label>
+              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password">
+            </div>
+            <button type="submit">Log In</button>
+          </form>
+        </div>
+
+        <form id="change-password">
           <div>
-            <label for="credentials[email]">Email</label>
-            <input name="credentials[email]" id="credentials[email]" type="text" placeholder="Email">
+            <label for="passwords[old]">Current password</label>
+            <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
           </div>
           <div>
-            <label for="credentials[password]">Password</label>
-            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password">
+            <label for="passwords[new]">New password</label>
+            <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
           </div>
-          <div>
-            <label for="credentials[password_confirmation]">Confirm password</label>
-            <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password">
-          </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Change Password</button>
         </form>
 
-        <form id="log-in">
-          <div>
-            <label for="credentials[email]">Email</label>
-            <input name="credentials[email]" id="credentials[email]" type="text" placeholder="Email">
+        <div class="game-play">
+          <div class="game-board">
+            <div>
+              <div data-id="0"></div>
+              <div data-id="1"></div>
+              <div data-id="2"></div>
+            </div>
+            <div>
+              <div data-id="3"></div>
+              <div data-id="4"></div>
+              <div data-id="5"></div>
+            </div>
+            <div>
+              <div data-id="6"></div>
+              <div data-id="7"></div>
+              <div data-id="8"></div>
+            </div>
           </div>
-          <div>
-            <label for="credentials[password]">Password</label>
-            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password">
-          </div>
-          <button type="submit">Log In</button>
-        </form>
-      </div>
 
-      <form id="change-password">
-        <div>
-          <label for="passwords[old]">Current password</label>
-          <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
+          <button type="button" id="new-game">New Game</button>
         </div>
-        <div>
-          <label for="passwords[new]">New password</label>
-          <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
-        </div>
-        <button type="submit">Change Password</button>
-      </form>
-
-      <div class="game-play">
-        <div class="game-board">
-          <div>
-            <div data-id="0"></div>
-            <div data-id="1"></div>
-            <div data-id="2"></div>
-          </div>
-          <div>
-            <div data-id="3"></div>
-            <div data-id="4"></div>
-            <div data-id="5"></div>
-          </div>
-          <div>
-            <div data-id="6"></div>
-            <div data-id="7"></div>
-            <div data-id="8"></div>
-          </div>
-        </div>
-
-        <button type="button" id="new-game">New Game</button>
-      </div>
+        
+      </main>
 
     </body>
 </html>
