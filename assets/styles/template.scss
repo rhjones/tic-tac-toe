@@ -28,8 +28,13 @@ nav {
     background: $lightblue;
     color: $white;
     padding: $link-padding;
-    display: inline-block;
+    display: block;
+    float: right;
     line-height: $custom-line-height;
+
+    &.log-out {
+      background-color: $darkblue;
+    }
 
     &:hover {
       text-decoration: none;
@@ -42,11 +47,6 @@ nav {
 footer {
   bottom: 0;
   @extend .text-center;
-}
-
-.auth-nav,
-.user-nav {
-  float: right;
 }
 
 form {
