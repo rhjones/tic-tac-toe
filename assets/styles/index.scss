@@ -1,8 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import './font-awesome/scss/font-awesome';
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Open+Sans);
+
 
 @import './colors';
+@import './typography';
 
 @import './template';
 
@@ -10,4 +13,4 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import './views';
 @import './game-board';
 
-@import 'breakpoints';
+@import './breakpoints';

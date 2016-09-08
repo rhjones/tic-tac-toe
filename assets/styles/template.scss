@@ -1,22 +1,46 @@
 $unit: 75px;
 $game-board-width: 3 * $unit;
 $min-width: $game-board-width + 30px;
-$navbar-height: 30px;
+$bar-height: 30px;
+$link-padding: ($bar-height - $font-size) / 2;
 
 // TEMPLATE
 
 body {
-  margin-top: $navbar-height;
+  margin-bottom: $bar-height;
+  margin-top: $bar-height;
   min-width: $min-width;
+}
+
+nav,
+footer {
+  height: $bar-height;
+  min-width: $min-width;
+  position: absolute;
+  width: 100%;
 }
 
 nav {
   background: $gray;
-  height: $navbar-height;
-  min-width: $min-width;
-  position: absolute;
   top: 0;
-  width: 100%;
+
+  a {
+    background: $lightblue;
+    color: $white;
+    padding: $link-padding;
+    display: inline-block;
+    line-height: $custom-line-height;
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  @extend .text-center;
 }
 
 .auth-buttons,
@@ -28,3 +52,5 @@ form {
   margin: 0 auto;
   width: 225px;
 }
+
+
