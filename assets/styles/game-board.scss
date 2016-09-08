@@ -3,6 +3,8 @@
 // rather than hardcoded into the markup
 // but breakpoints don't work with %cell, only .cell
 
+$arrow-padding: 0.5em;
+
 .cell {
   float: left;
   height: $unit;
@@ -36,10 +38,14 @@
 }
 
 .x {
-  color: $darkorange;
+  color: $teal;
 }
 
 .o {
-  color: $teal;
+  color: $darkorange;
+}
+
+.player {
+  padding: 0 15px;
 }
 

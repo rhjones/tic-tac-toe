@@ -25,7 +25,6 @@ footer {
 
 nav a,
 button {
-  line-height: $custom-line-height;
   padding: $link-padding;
   color: $white;
 }
@@ -87,7 +86,6 @@ input {
   border: 1px solid $white;
   box-shadow: none;
   font-size: $input-font-size;
-  line-height: $custom-line-height;
   height: $form-element-height;
 }
 

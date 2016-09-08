@@ -14,21 +14,11 @@
   .cell {
     height: 100px;
     width: 100px;
+    padding: 15px;
   }
 
   .game-board,
   form {
     width: 300px;
-  }
-}
-
-@include breakpoint(md) {
-  .cell {
-    height: 125px;
-    width: 125px;
-  }
-
-  .game-board {
-    width: 375px;
   }
 }
