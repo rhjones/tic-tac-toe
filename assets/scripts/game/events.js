@@ -1,8 +1,22 @@
 'use strict';
 
 const api = require('./api');
-const ui = require('./ui');
+const ui = require('../ui');
 const logic = require('./logic');
+
+const getStats = (data) => {
+  console.log('data in getStats is');
+  console.log(data);
+  let stats = logic.calculateGameStats(data);
+  ui.displayStats(stats);
+};
+
+const onGetStats = () => {
+  console.log('in game/events/getStats');
+  api.getFinishedGames()
+    .done(getStats)
+    .fail();
+};
 
 const onCreateGame = () => {
   event.preventDefault();
@@ -14,6 +28,7 @@ const onCreateGame = () => {
 const onEndGameSuccess = (data) => {
   logic.updateGame(data);
   ui.endGame();
+  onGetStats(data);
 };
 
 const makeMove = (data) => {
@@ -50,4 +65,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onGetStats
 };
