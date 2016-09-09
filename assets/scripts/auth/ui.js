@@ -62,6 +62,7 @@ const logOutSuccess = () => {
   app.user = null;
   toggleStats();
   toggleAuth();
+  $('#welcome').hide();
 };
 
 const passwordChangeSuccess = () => {
