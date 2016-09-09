@@ -52,8 +52,6 @@ const onClickCell = () => {
     api.takeTurn(id)
       .done(makeMove)
       .fail(ui.takeTurnFailure);
-  } else {
-    ui.invalidMove();
   }
 };
 
