@@ -43,7 +43,7 @@ const clearCells = () => {
 };
 
 const toggleNewGameButton = () => {
-  if($('.new-game').attr('disabled')) {
+  if ($('.new-game').attr('disabled')) {
     $('.new-game').removeAttr('disabled');
   } else {
     $('.new-game').attr('disabled', 'disabled');
@@ -134,6 +134,7 @@ const endGame = () => {
   } else if (game.winner === 'tie') {
     $('#game-over').html('<h2><i class="fa fa-star-half-o" aria-hidden="true"></i> Tie game</h2>');
   }
+
   $('#game-over').show();
   toggleNewGameButton();
 };

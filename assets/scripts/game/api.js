@@ -68,7 +68,6 @@ const getFinishedGames = () => {
   return request;
 };
 
-
 module.exports = {
   createGame,
   takeTurn,

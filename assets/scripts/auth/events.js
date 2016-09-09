@@ -3,9 +3,7 @@
 const getFormFields = require('../../..//lib/get-form-fields');
 const api = require('./api');
 const ui = require('../ui');
-const gameEvents= require('../game/events');
-
-
+const gameEvents = require('../game/events');
 
 const logIn = (data) => {
   ui.logInSuccess(data);
@@ -16,7 +14,7 @@ const onSignUp = (event) => {
   event.preventDefault();
   let signUpData = getFormFields(event.target);
   api.signUp(signUpData)
-    .done(function(data, textStatus, jqXHR) { 
+    .done(function (data, textStatus, jqXHR) {
       api.autoLogIn(data, textStatus, jqXHR, signUpData)
         .done(logIn)
         .fail(ui.logInFailure);

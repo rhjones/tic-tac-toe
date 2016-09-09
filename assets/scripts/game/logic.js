@@ -14,7 +14,8 @@ const createGameSuccess = (data) => {
 };
 
 const isValidMove = (id) => {
-  return (!game.currentGame.cells[id] && !game.currentGame.over);
+  let valid = !(game.currentGame.cells[id] && !game.currentGame.over);
+  return valid;
 };
 
 const checkRows = (cells, id) => {
@@ -96,15 +97,17 @@ const findWinner = (game) => {
   let possibleWinners = [0, 1, 2, 3, 6];
   let won = false;
   for (let i = 0, max = possibleWinners.length; i < max; i++) {
-    if(checkWin(game.cells, i)) {
+    if (checkWin(game.cells, i)) {
       if (game.cells[i] === 'x') {
         won = game.player_x.id;
       } else if (game.cells[i] === 'o') {
         won = game.player_o ? game.player_o.id : 'o';
       }
+
       break;
     }
   }
+
   return won;
 };
 
@@ -124,6 +127,7 @@ const calculateGameStats = (data) => {
       stats.ties++;
     }
   }
+
   return stats;
 };
 
