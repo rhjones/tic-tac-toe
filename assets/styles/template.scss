@@ -67,12 +67,17 @@ footer {
 }
 
 .message {
-  background: $lightorange;
-  color: $white;
   padding: 5px;
   height: 50px;
   padding: 3px;
 }
+
+.warning {
+  background: $lightorange;
+  color: $white;
+}
+
+
 
 .title-o {
   color: $darkorange;
