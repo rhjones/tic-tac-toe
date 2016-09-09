@@ -152,6 +152,11 @@ button {
 .pwd-form {
   background: $lighttan;
   padding: 15px;
+
+  > div {
+    max-width: 300px;
+    margin: 0 auto 10px;
+  }
 }
 
 
