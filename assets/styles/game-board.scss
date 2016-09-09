@@ -6,13 +6,6 @@
 $arrow-padding: 0.5em;
 $game-messages-width: $game-board-width + 40px;
 
-.game {
-  width: $game-board-width;
-  height: $game-board-width;
-  position: relative;
-  margin: 0 auto;
-}
-
 .cell {
   float: left;
   height: $unit;
@@ -33,9 +26,10 @@ $game-messages-width: $game-board-width + 40px;
 }
 
 .game-board {
+  background-image: url('../images/grid-xs.svg');
+  background-size: 100%;
   width: $game-board-width;
-  position: absolute;
-  top: 0;
+  margin: 0 auto;
   @include border-radius(30px);
 
   > div {
@@ -45,26 +39,6 @@ $game-messages-width: $game-board-width + 40px;
       @extend .cell;
     }
   }
-}
-
-.grid {
-  position: absolute;
-  top: 0;
-}
-
-.grid svg {
-  width: $game-board-width;
-  height: $game-board-width;
-}
-
-.grid rect {
-  fill: $white;
-}
-
-.grid line {
-  stroke: $lightgray;
-  stroke-width: 5;
-  stroke-linecap: round;
 }
 
 .turn-tracker {
