@@ -123,12 +123,18 @@ button {
 }
 
 #sign-up button,
-.new-game {
+#change-password button,
+.new-game, {
   background: $teal;
 
   &:hover {
     background: $teal-shade;
   }
+}
+
+.pwd-form {
+  background: $lighttan;
+  padding: 15px;
 }
 
 

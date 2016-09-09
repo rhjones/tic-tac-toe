@@ -2,6 +2,11 @@
   @return mix(black, $color, $percentage);
 }
 
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+
 
 
 $gray: #ddd;
@@ -16,6 +21,7 @@ $lightgreen: #b1dd00;
 
 
 $tan: #f7f7be;
+$lighttan: tint($tan, 50%);
 $lightorange: #eea948;
 $darkorange: #f27b47;
 $teal: #197a81;
