@@ -5,14 +5,11 @@ const ui = require('../ui');
 const logic = require('./logic');
 
 const getStats = (data) => {
-  console.log('data in getStats is');
-  console.log(data);
   let stats = logic.calculateGameStats(data);
   ui.displayStats(stats);
 };
 
 const onGetStats = () => {
-  console.log('in game/events/getStats');
   api.getFinishedGames()
     .done(getStats)
     .fail();
@@ -45,7 +42,6 @@ const makeMove = (data) => {
 };
 
 const onClickCell = () => {
-  console.log('click!');
   event.preventDefault();
   let id = $(event.target).data('id');
   if (logic.isValidMove(id)) {
