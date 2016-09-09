@@ -8,124 +8,126 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <nav>
-        <div class="auth-nav">
-          <a class="log-in-link" role="button" href="#">Log In</a>
-          <a class="sign-up-link" role="button" href="#">Sign Up</a>
-        </div>
-
-        <div class="user-nav">
-          <a class="log-out" role="button" href="#">Log Out</a>
-          <a class="change-password-link" role="button" href="#">Change Password</a>
-        </div>
-      </nav>
-
-      <div class="pwd-form">
-        <form id="change-password" class="change-password">
-          <div>
-            <label for="passwords[old]">Current password</label>
-            <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
+      <div class="wrapper">
+        <nav>
+          <div class="auth-nav">
+            <a class="log-in-link" role="button" href="#">Log In</a>
+            <a class="sign-up-link" role="button" href="#">Sign Up</a>
           </div>
-          <div>
-            <label for="passwords[new]">New password</label>
-            <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
+
+          <div class="user-nav">
+            <a class="log-out" role="button" href="#">Log Out</a>
+            <a class="change-password-link" role="button" href="#">Change Password</a>
           </div>
-          <button type="submit">Change Password</button>
-        </form>
-      </div>
+        </nav>
 
-      <main>
-        
-        <h1>Tic Tac T<i class="fa fa-circle title-o" aria-hidden="true"></i>e</h1>
-
-        <div class="messages">
-          <div id="password-changed" class="success"><i class="fa fa-lock" aria-hidden="true"></i> Your password has been changed.</div>
-          <div id="sign-up-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to create account.</div>
-          <div id="log-in-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to log in.</div>
-          <div id="log-out-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to log out.</div>
-          <div id="password-change-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to change password.</div>
-          <div id="create-game-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to create a new game.</div>
-          <div id="end-game-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to mark game as completed.</div>
-          <div id="turn-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to save your move.</div>
-          <div id="welcome" class="success"><span class="larger">Welcome!</span><br/>Click "New Game" to get started.</div>
-          <div id="game-over" class="success"></div>
-        </div>
-
-        <div class="auth-forms">
-          <form id="sign-up" class="sign-up">
+        <div class="pwd-form">
+          <form id="change-password" class="change-password">
             <div>
-              <label for="credentials[email]">Email</label>
-              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+              <label for="passwords[old]">Current password</label>
+              <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
             </div>
             <div>
-              <label for="credentials[password]">Password</label>
-              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+              <label for="passwords[new]">New password</label>
+              <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
             </div>
-            <div>
-              <label for="credentials[password_confirmation]">Confirm password</label>
-              <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
-            </div>
-            <button type="submit">Sign Up</button>
-          </form>
-
-          <form id="log-in">
-            <div>
-              <label for="credentials[email]">Email</label>
-              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
-            </div>
-            <div>
-              <label for="credentials[password]">Password</label>
-              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Log In</button>
+            <button type="submit">Change Password</button>
           </form>
         </div>
 
-        <div class="game-play">
-
-          <div class="turn-tracker">
-            <span class="player">
-              <span><i class="fa fa-arrow-right fa-3x turn-marker" aria-hidden="true"></i></span> 
-              <i class="fa fa-circle fa-3x x" aria-hidden="true"></i>
-            </span>
-            <span class="player">
-              <i class="fa fa-circle-o fa-3x o" aria-hidden="true"></i>
-              <span><i class="fa fa-arrow-left fa-3x turn-marker" aria-hidden="true"></i></span>
-            </span>
-          </div>
-
+        <main>
           
-          <div class="game-board">
-            <div>
-              <div data-id="0"></div>
-              <div data-id="1"></div>
-              <div data-id="2"></div>
-            </div>
-            <div>
-              <div data-id="3"></div>
-              <div data-id="4"></div>
-              <div data-id="5"></div>
-            </div>
-            <div>
-              <div data-id="6"></div>
-              <div data-id="7"></div>
-              <div data-id="8"></div>
-            </div>
+          <h1>Tic Tac T<i class="fa fa-circle title-o" aria-hidden="true"></i>e</h1>
+
+          <div class="messages">
+            <div id="password-changed" class="success"><i class="fa fa-lock" aria-hidden="true"></i> Your password has been changed.</div>
+            <div id="sign-up-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to create account.</div>
+            <div id="log-in-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to log in.</div>
+            <div id="log-out-fail" class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to log out.</div>
+            <div id="password-change-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to change password.</div>
+            <div id="create-game-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to create a new game.</div>
+            <div id="end-game-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to mark game as completed.</div>
+            <div id="turn-fail"  class="warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to save your move.</div>
+            <div id="welcome" class="success"><span class="larger">Welcome!</span><br/>Click "New Game" to get started.</div>
+            <div id="game-over" class="success"></div>
           </div>
 
-          <button type="button" class="new-game">New Game</button>
+          <div class="auth-forms">
+            <form id="sign-up" class="sign-up">
+              <div>
+                <label for="credentials[email]">Email</label>
+                <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+              </div>
+              <div>
+                <label for="credentials[password]">Password</label>
+                <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+              </div>
+              <div>
+                <label for="credentials[password_confirmation]">Confirm password</label>
+                <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
+              </div>
+              <button type="submit">Sign Up</button>
+            </form>
 
-        </div>
-        
-      </main>
+            <form id="log-in">
+              <div>
+                <label for="credentials[email]">Email</label>
+                <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+              </div>
+              <div>
+                <label for="credentials[password]">Password</label>
+                <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+              </div>
+              <button type="submit">Log In</button>
+            </form>
+          </div>
 
-      <footer>
-        <div class="stats tab">
-          <span class="win" title="Wins"><i class="fa fa-trophy" aria-hidden="true"></i> <span class="count">0</span></span>
-          <span class="lose" title="Losses"><i class="fa fa-thumbs-down" aria-hidden="true"></i> <span class="count">0</span></span>
-          <span class="tie" title="Tie Games"><i class="fa fa-star-half-o" aria-hidden="true"></i> <span class="count">0</span></span>
-        </div>
-      </footer>
+          <div class="game-play">
+
+            <div class="turn-tracker">
+              <span class="player">
+                <span><i class="fa fa-arrow-right fa-3x turn-marker" aria-hidden="true"></i></span> 
+                <i class="fa fa-circle fa-3x x" aria-hidden="true"></i>
+              </span>
+              <span class="player">
+                <i class="fa fa-circle-o fa-3x o" aria-hidden="true"></i>
+                <span><i class="fa fa-arrow-left fa-3x turn-marker" aria-hidden="true"></i></span>
+              </span>
+            </div>
+
+            
+            <div class="game-board">
+              <div>
+                <div data-id="0"></div>
+                <div data-id="1"></div>
+                <div data-id="2"></div>
+              </div>
+              <div>
+                <div data-id="3"></div>
+                <div data-id="4"></div>
+                <div data-id="5"></div>
+              </div>
+              <div>
+                <div data-id="6"></div>
+                <div data-id="7"></div>
+                <div data-id="8"></div>
+              </div>
+            </div>
+
+            <button type="button" class="new-game">New Game</button>
+
+          </div>
+          
+        </main>
+
+        <footer>
+          <div class="stats tab">
+            <span class="win" title="Wins"><i class="fa fa-trophy" aria-hidden="true"></i> <span class="count">0</span></span>
+            <span class="lose" title="Losses"><i class="fa fa-thumbs-down" aria-hidden="true"></i> <span class="count">0</span></span>
+            <span class="tie" title="Tie Games"><i class="fa fa-star-half-o" aria-hidden="true"></i> <span class="count">0</span></span>
+          </div>
+        </footer>
+      </div>
 
     </body>
 </html>
