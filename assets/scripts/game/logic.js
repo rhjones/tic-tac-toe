@@ -10,6 +10,7 @@ const createGameSuccess = (data) => {
   ui.clearCells();
   game.currentGame = data.game;
   ui.setPlayerX();
+  ui.toggleNewGameButton();
 };
 
 const isValidMove = (id) => {
