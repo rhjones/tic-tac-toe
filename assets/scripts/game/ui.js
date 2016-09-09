@@ -17,7 +17,16 @@ const clearCells = () => {
   }
 };
 
+const toggleNewGameButton = () => {
+  if($('.new-game').attr('disabled')) {
+    $('.new-game').removeAttr('disabled');
+  } else {
+    $('.new-game').attr('disabled', 'disabled');
+  }
+};
+
 const endGame = () => {
+  toggleNewGameButton();
   console.log('winner is', game.winner);
 };
 
@@ -57,4 +66,5 @@ module.exports = {
   indicatePlayer,
   setPlayerX,
   hideWelcome,
+  toggleNewGameButton,
 };
