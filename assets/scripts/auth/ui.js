@@ -55,6 +55,7 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   toggleStats();
+  $('#welcome').show();
 };
 
 const logOutSuccess = () => {

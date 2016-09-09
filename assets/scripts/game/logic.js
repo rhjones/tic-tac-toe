@@ -6,6 +6,7 @@ const app = require('../app');
 
 const createGameSuccess = (data) => {
   console.log(data);
+  ui.hideWelcome();
   ui.clearCells();
   game.currentGame = data.game;
   ui.setPlayerX();

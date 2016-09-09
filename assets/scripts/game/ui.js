@@ -44,6 +44,10 @@ const indicatePlayer = () => {
   $('.fa-arrow-left').fadeToggle('fast');
 };
 
+const hideWelcome = () => {
+  $('#welcome').hide();
+};
+
 module.exports = {
   failure,
   clearCells,
@@ -52,4 +56,5 @@ module.exports = {
   markCell,
   indicatePlayer,
   setPlayerX,
+  hideWelcome,
 };
