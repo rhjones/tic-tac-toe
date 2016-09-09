@@ -1,32 +1,24 @@
+$purewhite: #fff;
+$black: #000;
+
+$aqua: #aad4b5;
+$darkgray: #222e25;
+$darkorange: #f27b47;
+$lightgray: #97948a;
+$lightorange: #eea948;
+$tan: #f7f7be;
+$teal: #197a81;
+$white: #fafafa;
+
 @function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
+  @return mix($black, $color, $percentage);
 }
 
 @function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
+  @return mix($purewhite, $color, $percentage);
 }
 
 
-
-
-$gray: #ddd;
-$black: #000;
-$white: #fafafa;
-
-
-$darkblue: #143954;
-$lightblue: #62828f;
-$green: #468403;
-$lightgreen: #b1dd00;
-
-
-$tan: #f7f7be;
 $lighttan: tint($tan, 50%);
-$lightorange: #eea948;
-$darkorange: #f27b47;
-$teal: #197a81;
 $teal-shade: shade($teal, 20%);
-$aqua: #aad4b5;
-$lightgray: #97948a;
-$darkgray: #222e25;
-$orangetan: mix($darkorange, $tan, 50%);
+

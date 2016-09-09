@@ -14,19 +14,19 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  min-width: $min-width;
   background: $tan;
   color: $darkgray;
   height: 100%;
+  margin: 0;
+  min-width: $min-width;
+  padding: 0;
   position: relative;
 }
 
 .wrapper {
-  padding: $bar-height 0 $bar-height;
-  position: relative;
   min-height: 100%;
+  padding: $bar-height 0;
+  position: relative;
 }
 
 nav,
@@ -39,8 +39,8 @@ footer {
 
 nav a,
 button {
-  padding: $link-padding;
   color: $white;
+  padding: $link-padding;
 }
 
 nav {
@@ -54,12 +54,13 @@ nav {
     text-decoration: none;
 
     &:hover {
-      color: $white;
       background-color: $teal-shade;
+      color: $white;
       text-decoration: none;
     }
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       color: $white;
       text-decoration: none;
     }
@@ -76,21 +77,21 @@ nav {
 }
 
 footer {
+  @extend .text-center;
   bottom: 0;
   left: 0;
-  @extend .text-center;
 }
 
 .messages {
-  margin: 20px auto;
   height: 50px;
+  margin: 20px auto;
   max-width: 300px;
 }
 
 .message {
-  padding: 10px;
   @extend .text-center;
   @include border-radius(10px);
+  padding: 10px;
 }
 
 .warning {
@@ -125,10 +126,10 @@ label {
 }
 
 button {
-  width: 100%;
-  box-shadow: none;
   border: 0;
+  box-shadow: none;
   height: $form-element-height;
+  width: 100%;
 }
 
 #log-in button {
@@ -154,8 +155,8 @@ button {
   padding: 15px;
 
   > div {
-    max-width: 300px;
     margin: 0 auto 10px;
+    max-width: 300px;
   }
 }
 

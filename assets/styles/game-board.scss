@@ -3,15 +3,15 @@
 // rather than hardcoded into the markup
 // but breakpoints don't work with %cell, only .cell
 
-$arrow-padding: 0.5em;
+$arrow-padding: .5em;
 
 .cell {
   float: left;
+  font-size: 4em;
   height: $unit;
+  padding: 7.5px 11.5px;
   text-align: center;
   width: $unit;
-  padding: 7.5px 11.5px;
-  font-size: 4em;
 }
 
 %game-board-row::after {
@@ -25,11 +25,11 @@ $arrow-padding: 0.5em;
 }
 
 .game-board {
+  @include border-radius(30px);
   background-image: url('../images/grid-xs.png');
   background-size: 100%;
-  width: $game-board-width;
   margin: 0 auto;
-  @include border-radius(30px);
+  width: $game-board-width;
 
   > div {
     @extend %game-board-row;
@@ -54,15 +54,15 @@ $arrow-padding: 0.5em;
 
 .player {
   padding: 0 15px;
-}
 
-.player > span {
-  display: inline-block;
-  width: 50px;
+  > span {
+    display: inline-block;
+    width: 50px;
+  }
 }
 
 .new-game {
-  width: $game-board-width;
   margin: 20px 0;
+  width: $game-board-width;
 }
 
