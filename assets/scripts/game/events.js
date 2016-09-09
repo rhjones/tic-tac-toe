@@ -8,7 +8,7 @@ const onCreateGame = () => {
   event.preventDefault();
   api.createGame()
     .done(logic.createGameSuccess)
-    .fail(ui.failure);
+    .fail(ui.createGameFailure);
 };
 
 const onEndGameSuccess = (data) => {
@@ -23,7 +23,7 @@ const makeMove = (data) => {
   if (result) {
     api.endGame()
       .done(onEndGameSuccess)
-      .fail(ui.failure);
+      .fail(ui.endGameFailure);
   } else {
     ui.indicatePlayer();
   }
@@ -36,7 +36,7 @@ const onClickCell = () => {
   if (logic.isValidMove(id)) {
     api.takeTurn(id)
       .done(makeMove)
-      .fail(ui.failure);
+      .fail(ui.takeTurnFailure);
   } else {
     ui.invalidMove();
   }
