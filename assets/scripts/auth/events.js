@@ -13,14 +13,13 @@ const logIn = (data) => {
 
 const onSignUp = (event) => {
   event.preventDefault();
-  let originalData = getFormFields(event.target);
-  console.log(originalData);
-  api.signUp(originalData)
-    .done(
+  let data = getFormFields(event.target);
+  api.signUp(data)
+    .done(function (originalData) {
       api.logIn(originalData)
         .done(logIn)
-        .fail(ui.logInFailure)
-      )
+        .fail(ui.logInFailure);
+    })
     .fail(ui.signUpFailure);
 };
 
