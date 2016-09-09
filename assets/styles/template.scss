@@ -61,15 +61,17 @@ footer {
 }
 
 .messages {
-  margin: 20px 0;
-  height: 30px;
-  // width: 
+  margin: 20px auto;
+  height: 50px;
+  max-width: 300px;
 }
 
 .message {
   background: $lightorange;
   color: $white;
   padding: 5px;
+  height: 50px;
+  padding: 3px;
 }
 
 .title-o {
