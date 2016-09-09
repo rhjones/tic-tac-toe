@@ -14,10 +14,6 @@ const createGameSuccess = (data) => {
 };
 
 const isValidMove = (id) => {
-  console.log(id);
-  console.log(game.currentGame.cells);
-  console.log('current value of cell is', game.currentGame.cells[id]);
-  console.log('game is over?', game.currentGame.over);
   return (!game.currentGame.cells[id] && !game.currentGame.over);
 };
 
@@ -84,11 +80,9 @@ const isOver = (id) => {
 };
 
 const takeTurnSuccess = (data) => {
-  console.log(data);
   game.currentGame = data.game;
   game.currentGameMoves++;
   let id = game.currentCellId;
-  console.log('current moves', game.currentGameMoves);
   ui.markCell(id);
 
   return isOver(id);
