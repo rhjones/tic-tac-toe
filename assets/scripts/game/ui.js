@@ -2,12 +2,20 @@
 
 const game = require('./game');
 
-const failure = (error) => {
-  // currently covers:
-  // - api.createGame.fail
-  // - api.endGame.fail
-  // - api.takeTurn.fail
-  console.error(error);
+const gameMessage = (messageId) => {
+  $(messageId).show().delay(3000).fadeToggle('slow');
+};
+
+const createGameFailure = () => {
+  gameMessage('#create-game-fail');
+};
+
+const endGameFailure = () => {
+  gameMessage('#end-game-fail');
+};
+
+const takeTurnFailure = () => {
+  gameMessage('#turn-fail');
 };
 
 const clearCells = () => {
@@ -58,7 +66,6 @@ const hideWelcome = () => {
 };
 
 module.exports = {
-  failure,
   clearCells,
   endGame,
   invalidMove,
@@ -67,4 +74,7 @@ module.exports = {
   setPlayerX,
   hideWelcome,
   toggleNewGameButton,
+  createGameFailure,
+  endGameFailure,
+  takeTurnFailure,
 };
