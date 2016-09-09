@@ -2,13 +2,14 @@
 
 const getFormFields = require('../../..//lib/get-form-fields');
 const api = require('./api');
-const ui = require('./ui');
+const ui = require('../ui');
+const gameEvents= require('../game/events');
+
+
 
 const logIn = (data) => {
   ui.logInSuccess(data);
-  api.getFinishedGames()
-    .done(ui.displayStats)
-    .fail();
+  gameEvents.onGetStats();
 };
 
 const onSignUp = (event) => {
