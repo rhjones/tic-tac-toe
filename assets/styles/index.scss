@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada|Open+Sans);
 
 @import './mixins';
+@import './better-bootstrap';
 
 @import './colors';
 @import './typography';
@@ -12,7 +13,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import './template';
 @import './stats';
 
-@import './better-bootstrap';
+
 @import './views';
 @import './game-board';
 
