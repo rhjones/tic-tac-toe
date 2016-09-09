@@ -11,3 +11,7 @@ form > div {
 input {
   @extend .form-control;
 }
+
+.messages > div {
+  @extend .message;
+}
