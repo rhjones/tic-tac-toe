@@ -14,11 +14,16 @@
   .cell {
     height: 100px;
     width: 100px;
-    padding: 15px;
+    padding: 12.5px 17.5px;
+    font-size: 5em;
   }
 
   .game-board,
   form {
     width: 300px;
+  }
+
+  .game-board {
+    background-image: url('../images/grid-sm.svg');
   }
 }
