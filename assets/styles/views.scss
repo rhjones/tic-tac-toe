@@ -18,3 +18,9 @@
 .inline-block {
   display: inline-block;
 }
+
+button:disabled,
+button:disabled:hover {
+  background-color: $lightgray;
+  pointer-events: none;
+};
