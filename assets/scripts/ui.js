@@ -24,7 +24,7 @@ const toggleAuthOptions = () => {
 };
 
 const toggleChangePassword = () => {
-  $('#change-password').toggle();
+  $('.pwd-form').slideToggle();
 };
 
 const toggleStats = () => {
