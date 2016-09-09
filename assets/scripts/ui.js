@@ -35,7 +35,22 @@ const toggleStats = () => {
   $('.stats').toggleClass('inline-block');
 };
 
-// AJAX FAILURE
+const clearCells = () => {
+  for (let i = 0; i < 9; i++) {
+    let cell = $('.game-board').find("[data-id='" + i + "']");
+    cell.html('');
+  }
+};
+
+const toggleNewGameButton = () => {
+  if($('.new-game').attr('disabled')) {
+    $('.new-game').removeAttr('disabled');
+  } else {
+    $('.new-game').attr('disabled', 'disabled');
+  }
+};
+
+// AUTH FAILURE
 
 const logInFailure = () => {
   message('#log-in-fail');
@@ -53,7 +68,7 @@ const signUpFailure = () => {
   message('#sign-up-fail');
 };
 
-// AJAX SUCCESS
+// AUTH SUCCESS
 
 const logInSuccess = (data) => {
   app.user = data.user;
@@ -88,38 +103,21 @@ const displayStats = (stats) => {
   $('.tie > .count').text(stats.ties);
 };
 
-// GAME STUFF
-
-const gameMessage = (messageId) => {
-  $(messageId).show().delay(3000).fadeToggle('slow');
-};
+// GAME FAILURE
 
 const createGameFailure = () => {
-  gameMessage('#create-game-fail');
+  message('#create-game-fail');
 };
 
 const endGameFailure = () => {
-  gameMessage('#end-game-fail');
+  message('#end-game-fail');
 };
 
 const takeTurnFailure = () => {
-  gameMessage('#turn-fail');
+  message('#turn-fail');
 };
 
-const clearCells = () => {
-  for (let i = 0; i < 9; i++) {
-    let cell = $('.game-board').find("[data-id='" + i + "']");
-    cell.html('');
-  }
-};
-
-const toggleNewGameButton = () => {
-  if($('.new-game').attr('disabled')) {
-    $('.new-game').removeAttr('disabled');
-  } else {
-    $('.new-game').attr('disabled', 'disabled');
-  }
-};
+// GAME STUFF
 
 const endGame = () => {
   if (game.winner === 'x') {
@@ -132,10 +130,6 @@ const endGame = () => {
   $('#game-over').show();
   toggleNewGameButton();
   console.log('winner is', game.winner);
-};
-
-const invalidMove = () => {
-  console.log('bad move');
 };
 
 const markCell = (id) => {
@@ -178,7 +172,6 @@ module.exports = {
   displayStats,
   clearCells,
   endGame,
-  invalidMove,
   markCell,
   indicatePlayer,
   setPlayerX,
