@@ -59,6 +59,7 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   toggleStats();
+
   clearForm('sign-up');
   clearForm('log-in');
   message('#welcome');
@@ -68,6 +69,7 @@ const logOutSuccess = () => {
   app.user = null;
   toggleStats();
   toggleAuth();
+  $('#game-over').hide();
   clearForm('change-password');
   $('#welcome').hide();
 };

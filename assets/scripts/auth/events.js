@@ -14,10 +14,10 @@ const logIn = (data) => {
 
 const onSignUp = (event) => {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.signUp(data)
-    .done(function (originalData) {
-      api.logIn(originalData)
+  let signUpData = getFormFields(event.target);
+  api.signUp(signUpData)
+    .done(function(data, textStatus, jqXHR) { 
+      api.autoLogIn(data, textStatus, jqXHR, signUpData)
         .done(logIn)
         .fail(ui.logInFailure);
     })

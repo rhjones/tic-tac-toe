@@ -12,6 +12,7 @@ const signUp = (data) => {
 };
 
 const logIn = (data) => {
+  console.log('data is', data);
   let request = $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
@@ -43,9 +44,19 @@ const changePassword = (data) => {
   return request;
 };
 
+const autoLogIn = (userData, textStatus, jqXHR, signUpData) => {
+  let request = $.ajax({
+    url: app.host + '/sign-in',
+    method: 'POST',
+    data: signUpData,
+  });
+  return request;
+};
+
 module.exports = {
   signUp,
   logIn,
   logOut,
   changePassword,
+  autoLogIn,
 };
