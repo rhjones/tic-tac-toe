@@ -4,7 +4,6 @@
 // but breakpoints don't work with %cell, only .cell
 
 $arrow-padding: 0.5em;
-$game-messages-width: $game-board-width + 40px;
 
 .cell {
   float: left;
@@ -62,19 +61,7 @@ $game-messages-width: $game-board-width + 40px;
   width: 50px;
 }
 
-.game-messages {
-  // position: relative;
-  // top: -185px;
-  // z-index: 1;
-  width: $game-messages-width; 
-  margin: 0 auto;
-  background: $aqua;
-  padding: 20px;
-  color: $white;
-  @include border-radius(30px);
-}
-
 .new-game {
-  width: 50%
+  width: $game-board-width;
 }
 
