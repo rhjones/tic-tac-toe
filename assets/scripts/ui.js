@@ -5,6 +5,10 @@ const game = require('./game/game');
 
 // GENERIC UI ACTIONS
 
+const clearForm = (formId) => {
+  document.getElementById(formId).reset();
+};
+
 const message = (messageId) => {
   $(messageId).show().delay(3000).fadeToggle('slow');
 };
@@ -55,18 +59,22 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   toggleStats();
-  $('#welcome').show();
+  clearForm('sign-up');
+  clearForm('log-in');
+  message('#welcome');
 };
 
 const logOutSuccess = () => {
   app.user = null;
   toggleStats();
   toggleAuth();
+  clearForm('change-password');
   $('#welcome').hide();
 };
 
 const passwordChangeSuccess = () => {
   toggleChangePassword();
+  clearForm('change-password');
   message('#password-changed');
 };
 
@@ -77,6 +85,8 @@ const displayStats = (stats) => {
   $('.lose > .count').text(stats.losses);
   $('.tie > .count').text(stats.ties);
 };
+
+// GAME STUFF
 
 const gameMessage = (messageId) => {
   $(messageId).show().delay(3000).fadeToggle('slow');
