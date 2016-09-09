@@ -1,11 +1,10 @@
 'use strict';
 
 const game = require('./game');
-const ui = require('./ui');
+const ui = require('../ui');
 const app = require('../app');
 
 const createGameSuccess = (data) => {
-  console.log(data);
   ui.hideGameOver();
   ui.hideWelcome();
   ui.clearCells();
