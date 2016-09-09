@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('./app');
-const gameLogic = require('./game/logic.js');
 const game = require('./game/game');
 
 // GENERIC UI ACTIONS
@@ -73,8 +72,7 @@ const passwordChangeSuccess = () => {
 
 // GAME STATS
 
-const displayStats = (data) => {
-  let stats = gameLogic.calculateGameStats(data);
+const displayStats = (stats) => {
   $('.win > .count').text(stats.wins);
   $('.lose > .count').text(stats.losses);
   $('.tie > .count').text(stats.ties);
