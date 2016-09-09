@@ -50,6 +50,14 @@ const toggleNewGameButton = () => {
   }
 };
 
+const hideWelcome = () => {
+  $('#welcome').hide();
+};
+
+const hideGameOver = () => {
+  $('#game-over').hide();
+};
+
 // AUTH FAILURE
 
 const logInFailure = () => {
@@ -74,7 +82,6 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   toggleStats();
-
   clearForm('sign-up');
   clearForm('log-in');
   message('#welcome');
@@ -117,7 +124,7 @@ const takeTurnFailure = () => {
   message('#turn-fail');
 };
 
-// GAME STUFF
+// GAME UI ACTIONS
 
 const endGame = () => {
   if (game.winner === 'x') {
@@ -129,11 +136,9 @@ const endGame = () => {
   }
   $('#game-over').show();
   toggleNewGameButton();
-  console.log('winner is', game.winner);
 };
 
 const markCell = (id) => {
-  console.log('turn success!');
   let cell = $('.game-board').find("[data-id='" + id + "']");
   if (game.xTurn) {
     cell.html('<i class="fa fa-circle x" aria-hidden="true"></i>');
@@ -149,14 +154,6 @@ const setPlayerX = () => {
 const indicatePlayer = () => {
   $('.fa-arrow-right').fadeToggle('fast');
   $('.fa-arrow-left').fadeToggle('fast');
-};
-
-const hideWelcome = () => {
-  $('#welcome').hide();
-};
-
-const hideGameOver = () => {
-  $('#game-over').hide();
 };
 
 module.exports = {
