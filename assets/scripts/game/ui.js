@@ -34,6 +34,14 @@ const toggleNewGameButton = () => {
 };
 
 const endGame = () => {
+  if (game.winner === 'x') {
+    $('#game-over').html('<h2><i class="fa fa-circle x" aria-hidden="true"></i> wins!</h2>');
+  } else if (game.winner === 'o') {
+    $('#game-over').html('<h2><i class="fa fa-circle-o o" aria-hidden="true"></i> wins!</h2>');
+  } else if (game.winner === 'tie') {
+    $('#game-over').html('<h2><i class="fa fa-star-half-o" aria-hidden="true"></i> Tie game</h2>');
+  }
+  $('#game-over').show();
   toggleNewGameButton();
   console.log('winner is', game.winner);
 };
@@ -65,6 +73,10 @@ const hideWelcome = () => {
   $('#welcome').hide();
 };
 
+const hideGameOver = () => {
+  $('#game-over').hide();
+};
+
 module.exports = {
   clearCells,
   endGame,
@@ -77,4 +89,5 @@ module.exports = {
   createGameFailure,
   endGameFailure,
   takeTurnFailure,
+  hideGameOver,
 };
