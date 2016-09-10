@@ -43,7 +43,11 @@ const makeMove = (data) => {
 
 const onClickCell = () => {
   event.preventDefault();
-  let id = $(event.target).data('id');
+  let target = $(event.target);
+  if ( target.is('i') ) {
+    target = $(event.target).parent();
+  }
+  let id = target.data('id');
   if (logic.isValidMove(id)) {
     api.takeTurn(id)
       .done(makeMove)
