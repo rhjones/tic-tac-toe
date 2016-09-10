@@ -9,8 +9,16 @@ const clearForm = (formId) => {
   document.getElementById(formId).reset();
 };
 
-const message = (messageId) => {
-  $(messageId).show().delay(3000).fadeToggle('slow');
+const message = (messageKey) => {
+  let message = $('.messages div');
+  console.log(message);
+  $('.messages div')
+    .removeClass()
+    .addClass(app.alerts[messageKey].class)
+    .html(app.alerts[messageKey].msg)
+    .show()
+    .delay(3000)
+    .fadeToggle('slow');
 };
 
 const toggleAuth = () => {
@@ -61,11 +69,11 @@ const hideGameOver = () => {
 // AUTH FAILURE
 
 const logInFailure = () => {
-  message('#log-in-fail');
+  message('logInFail');
 };
 
 const logOutFailure = () => {
-  message('#log-out-fail');
+  message('logOutFail');
 };
 
 const passwordChangeFailure = () => {
@@ -73,7 +81,7 @@ const passwordChangeFailure = () => {
 };
 
 const signUpFailure = () => {
-  message('#sign-up-fail');
+  message('signUpFail');
 };
 
 // AUTH SUCCESS
@@ -118,15 +126,15 @@ const displayStats = (stats) => {
 // GAME FAILURE
 
 const createGameFailure = () => {
-  message('#create-game-fail');
+  message('createGameFail');
 };
 
 const endGameFailure = () => {
-  message('#end-game-fail');
+  message('endGameFail');
 };
 
 const takeTurnFailure = () => {
-  message('#turn-fail');
+  message('turnFail');
 };
 
 // GAME UI ACTIONS
