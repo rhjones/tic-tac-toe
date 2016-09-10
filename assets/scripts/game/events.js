@@ -44,7 +44,7 @@ const makeMove = (data) => {
 const onClickCell = () => {
   event.preventDefault();
   let target = $(event.target);
-  if ( target.is('i') ) {
+  if (target.is('i')) {
     target = $(event.target).parent();
   }
   let id = target.data('id');
