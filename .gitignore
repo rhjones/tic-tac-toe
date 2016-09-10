@@ -4,7 +4,7 @@ dist
 specs.js
 # *bundle.js
 _SpecRunner.html
-# *.woff2
+*.woff2
 *.woff
 *.svg
 *.ttf
