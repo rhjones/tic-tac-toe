@@ -94,6 +94,11 @@ const logOutSuccess = () => {
   $('#game-over').hide();
   clearForm('change-password');
   $('#welcome').hide();
+  $('.new-game').removeAttr('disabled');
+  $('.sign-up-link').removeClass('hidden');
+  $('.log-in-link').addClass('hidden');
+  $('#log-in').show();
+  $('#sign-up').hide();
 };
 
 const passwordChangeSuccess = () => {
