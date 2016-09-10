@@ -248,7 +248,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'http://tic-tac-toe.wdibos.com'
+	  host: 'https://tic-tac-toe.wdibos.com'
 	};
 
 	module.exports = app;
