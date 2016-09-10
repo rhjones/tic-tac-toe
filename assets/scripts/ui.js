@@ -77,7 +77,7 @@ const logOutFailure = () => {
 };
 
 const passwordChangeFailure = () => {
-  message('#password-change-fail');
+  message('passwordChangeFail');
 };
 
 const signUpFailure = () => {
@@ -112,7 +112,7 @@ const logOutSuccess = () => {
 const passwordChangeSuccess = () => {
   toggleChangePassword();
   clearForm('change-password');
-  message('#password-changed');
+  message('passwordChangeSuccess');
 };
 
 // GAME STATS
