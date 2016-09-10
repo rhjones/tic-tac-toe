@@ -3,7 +3,11 @@
 const app = {
   host: 'https://aqueous-atoll-85096.herokuapp.com',
   alerts: {
-    passwordChanged: {
+    passwordChangeFail: {
+      class: 'warning',
+      msg: '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to change password.',
+    },
+    passwordChangeSuccess: {
       class: 'success',
       msg: '<i class="fa fa-lock" aria-hidden="true"></i> Your password has been changed.',
     },
