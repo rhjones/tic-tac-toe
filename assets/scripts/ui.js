@@ -9,10 +9,10 @@ const clearForm = (formId) => {
   document.getElementById(formId).reset();
 };
 
-const message = (messageKey) => {
+const message = (location, messageKey) => {
   let message = $('.messages div');
   console.log(message);
-  $('.messages div')
+  $(location)
     .removeClass()
     .addClass(app.alerts[messageKey].class)
     .html(app.alerts[messageKey].msg)
@@ -50,14 +50,6 @@ const clearCells = () => {
   }
 };
 
-const toggleNewGameButton = () => {
-  if ($('.new-game').attr('disabled')) {
-    $('.new-game').removeAttr('disabled');
-  } else {
-    $('.new-game').attr('disabled', 'disabled');
-  }
-};
-
 const hideWelcome = () => {
   $('#welcome').hide();
 };
@@ -69,19 +61,19 @@ const hideGameOver = () => {
 // AUTH FAILURE
 
 const logInFailure = () => {
-  message('logInFail');
+  message('.messages div', 'logInFail');
 };
 
 const logOutFailure = () => {
-  message('logOutFail');
+  message('.messages div', 'logOutFail');
 };
 
 const passwordChangeFailure = () => {
-  message('passwordChangeFail');
+  message('.messages div', 'passwordChangeFail');
 };
 
 const signUpFailure = () => {
-  message('signUpFail');
+  message('.messages div', 'signUpFail');
 };
 
 // AUTH SUCCESS
@@ -93,6 +85,7 @@ const logInSuccess = (data) => {
   clearForm('sign-up');
   clearForm('log-in');
   message('#welcome');
+  $('.game-board-messages').show();
 };
 
 const logOutSuccess = () => {
@@ -102,17 +95,17 @@ const logOutSuccess = () => {
   $('#game-over').hide();
   clearForm('change-password');
   $('#welcome').hide();
-  $('.new-game').removeAttr('disabled');
   $('.sign-up-link').removeClass('hidden');
   $('.log-in-link').addClass('hidden');
   $('#log-in').show();
   $('#sign-up').hide();
+  $('.game-board-messages').hide();
 };
 
 const passwordChangeSuccess = () => {
   toggleChangePassword();
   clearForm('change-password');
-  message('passwordChangeSuccess');
+  message('.messages div', 'passwordChangeSuccess');
 };
 
 // GAME STATS
@@ -126,30 +119,28 @@ const displayStats = (stats) => {
 // GAME FAILURE
 
 const createGameFailure = () => {
-  message('createGameFail');
+  message('.messages div', 'createGameFail');
 };
 
 const endGameFailure = () => {
-  message('endGameFail');
+  message('.messages div', 'endGameFail');
 };
 
 const takeTurnFailure = () => {
-  message('turnFail');
+  message('.messages div', 'turnFail');
 };
 
 // GAME UI ACTIONS
 
 const endGame = () => {
   if (game.winner === 'x') {
-    $('#game-over').html('<h2><i class="fa fa-circle x" aria-hidden="true"></i> wins!</h2>');
+    message('.game-board-messages div', 'xWin');
   } else if (game.winner === 'o') {
-    $('#game-over').html('<h2><i class="fa fa-circle-o o" aria-hidden="true"></i> wins!</h2>');
+    message('.game-board-messages div', 'yWin');
   } else if (game.winner === 'tie') {
-    $('#game-over').html('<h2><i class="fa fa-star-half-o" aria-hidden="true"></i> Tie game</h2>');
+    message('.game-board-messages div', 'tie');
   }
-
-  $('#game-over').show();
-  toggleNewGameButton();
+  $('.game-board-messages').show();
 };
 
 const markCell = (id) => {
@@ -187,7 +178,6 @@ module.exports = {
   indicatePlayer,
   setPlayerX,
   hideWelcome,
-  toggleNewGameButton,
   createGameFailure,
   endGameFailure,
   takeTurnFailure,
