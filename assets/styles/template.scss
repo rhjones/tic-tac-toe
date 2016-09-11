@@ -31,10 +31,14 @@ body {
 
 nav,
 footer {
-  height: $bar-height;
   min-width: $min-width;
   position: absolute;
   width: 100%;
+}
+
+footer {
+  height: $bar-height;
+  background: $aqua;
 }
 
 nav a,

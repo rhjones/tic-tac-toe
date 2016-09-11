@@ -4,17 +4,17 @@
 
 
 .stats {
-  bottom: 0;
+  bottom: $bar-height;
   color: $darkgray;
   display: inline-block;
   height: $bar-height;
-  margin: 0 auto;
+  margin: 0px auto;
   padding: $link-padding;
   position: relative;
 
   &::before {
     background: $aqua;
-    bottom: 0;
+    bottom: -15px;
     content: ''; // To generate the box
     left: 0;
     position: absolute;
