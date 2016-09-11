@@ -38,11 +38,13 @@ const app = {
     },
     createGameFail: {
       class: 'warning',
-      msg: '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to create a new game.',
+      msg: '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' +
+        'Unable to create a new game.',
     },
     endGameFail: {
       class: 'warning',
-      msg: '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to mark game as completed.',
+      msg: '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' +
+      'Unable to mark game as completed.',
     },
     turnFail: {
       class: 'warning',
