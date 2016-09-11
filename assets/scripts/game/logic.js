@@ -6,7 +6,7 @@ const app = require('../app');
 
 const createGameSuccess = (data) => {
   ui.hideGameOver();
-  ui.hideWelcome();
+  ui.hideGameMessages();
   ui.clearCells();
   game.currentGame = data.game;
   ui.setPlayerX();
