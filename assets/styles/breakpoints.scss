@@ -11,6 +11,10 @@
     font-size: 64px;
   }
 
+  h2 {
+    font-size: 40px;
+  }
+
   .cell {
     font-size: 5em;
     height: 100px;
@@ -18,9 +22,13 @@
     width: 100px;
   }
 
-  .game-board,
+  .game-board-wrapper,
   form {
     width: 300px;
+  }
+
+  .game-board-wrapper {
+    height: 300px;
   }
 
   .game-board {

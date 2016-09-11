@@ -9,8 +9,22 @@ const clearForm = (formId) => {
   document.getElementById(formId).reset();
 };
 
-const message = (messageId) => {
-  $(messageId).show().delay(3000).fadeToggle('slow');
+const messageFade = (location, messageKey) => {
+  $(location)
+    .removeClass()
+    .addClass(app.alerts[messageKey].class)
+    .html(app.alerts[messageKey].msg)
+    .show()
+    .delay(3000)
+    .fadeToggle('slow');
+};
+
+const messageStick = (location, messageKey) => {
+  $(location)
+    .removeClass()
+    .addClass(app.alerts[messageKey].class)
+    .html(app.alerts[messageKey].msg)
+    .show();
 };
 
 const toggleAuth = () => {
@@ -42,16 +56,8 @@ const clearCells = () => {
   }
 };
 
-const toggleNewGameButton = () => {
-  if ($('.new-game').attr('disabled')) {
-    $('.new-game').removeAttr('disabled');
-  } else {
-    $('.new-game').attr('disabled', 'disabled');
-  }
-};
-
-const hideWelcome = () => {
-  $('#welcome').hide();
+const hideGameMessages = () => {
+  $('.game-messages').hide();
 };
 
 const hideGameOver = () => {
@@ -61,19 +67,19 @@ const hideGameOver = () => {
 // AUTH FAILURE
 
 const logInFailure = () => {
-  message('#log-in-fail');
+  messageFade('.messages div', 'logInFail');
 };
 
 const logOutFailure = () => {
-  message('#log-out-fail');
+  messageFade('.messages div', 'logOutFail');
 };
 
 const passwordChangeFailure = () => {
-  message('#password-change-fail');
+  messageFade('.messages div', 'passwordChangeFail');
 };
 
 const signUpFailure = () => {
-  message('#sign-up-fail');
+  messageFade('.messages div', 'signUpFail');
 };
 
 // AUTH SUCCESS
@@ -84,22 +90,32 @@ const logInSuccess = (data) => {
   toggleStats();
   clearForm('sign-up');
   clearForm('log-in');
-  message('#welcome');
+  messageStick('.game-message div', 'welcome');
+  $('.game-messages').show();
 };
 
 const logOutSuccess = () => {
   app.user = null;
+  game.xTurn = true;
+  game.currentGameMoves = 0;
+  game.currentCellId = null;
+  game.currentGame = null;
   toggleStats();
   toggleAuth();
-  $('#game-over').hide();
   clearForm('change-password');
-  $('#welcome').hide();
+  $('.sign-up-link').removeClass('hidden');
+  $('.log-in-link').addClass('hidden');
+  $('#log-in').show();
+  $('#sign-up').hide();
+  $('.game-messages').hide();
+  $('.fa-arrow-right').hide();
+  $('.fa-arrow-left').hide();
 };
 
 const passwordChangeSuccess = () => {
   toggleChangePassword();
   clearForm('change-password');
-  message('#password-changed');
+  messageFade('.messages div', 'passwordChangeSuccess');
 };
 
 // GAME STATS
@@ -113,30 +129,28 @@ const displayStats = (stats) => {
 // GAME FAILURE
 
 const createGameFailure = () => {
-  message('#create-game-fail');
+  messageFade('.messages div', 'createGameFail');
 };
 
 const endGameFailure = () => {
-  message('#end-game-fail');
+  messageFade('.messages div', 'endGameFail');
 };
 
 const takeTurnFailure = () => {
-  message('#turn-fail');
+  messageFade('.messages div', 'turnFail');
 };
 
 // GAME UI ACTIONS
 
 const endGame = () => {
   if (game.winner === 'x') {
-    $('#game-over').html('<h2><i class="fa fa-circle x" aria-hidden="true"></i> wins!</h2>');
+    messageStick('.game-message div', 'xWin');
   } else if (game.winner === 'o') {
-    $('#game-over').html('<h2><i class="fa fa-circle-o o" aria-hidden="true"></i> wins!</h2>');
+    messageStick('.game-message div', 'oWin');
   } else if (game.winner === 'tie') {
-    $('#game-over').html('<h2><i class="fa fa-star-half-o" aria-hidden="true"></i> Tie game</h2>');
+    messageStick('.game-message div', 'tie');
   }
-
-  $('#game-over').show();
-  toggleNewGameButton();
+  $('.game-messages').show();
 };
 
 const markCell = (id) => {
@@ -173,8 +187,7 @@ module.exports = {
   markCell,
   indicatePlayer,
   setPlayerX,
-  hideWelcome,
-  toggleNewGameButton,
+  hideGameMessages,
   createGameFailure,
   endGameFailure,
   takeTurnFailure,

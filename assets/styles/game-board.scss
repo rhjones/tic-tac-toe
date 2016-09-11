@@ -5,6 +5,30 @@
 
 $arrow-padding: .5em;
 
+.game-board-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: $game-board-width;
+  height: $game-board-width;
+}
+
+.game-messages,
+.game-board {
+  @include border-radius(30px);
+  position: absolute;
+  top: 0;
+}
+
+.game-messages {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  @extend .text-center;
+  background: $transparent-black;
+  padding: 50px 20px;
+  color: $white;
+}
+
 .cell {
   float: left;
   font-size: 4em;
@@ -25,11 +49,9 @@ $arrow-padding: .5em;
 }
 
 .game-board {
-  @include border-radius(30px);
   background-image: url('../images/grid-xs.png');
   background-size: 100%;
-  margin: 0 auto;
-  width: $game-board-width;
+  z-index: 1;
 
   > div {
     @extend %game-board-row;
@@ -63,6 +85,6 @@ $arrow-padding: .5em;
 
 .new-game {
   margin: 20px 0;
-  width: $game-board-width;
+  width: 100%;
 }
 
