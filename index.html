@@ -22,7 +22,6 @@
         </nav>
 
         <div class="pwd-form">
-          <div id="password-change-fail" class="message warning"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Unable to change password.</div>
           <form id="change-password" class="change-password">
             <div>
               <label for="passwords[old]">Current password</label>
@@ -36,16 +35,13 @@
           </form>
         </div>
 
+        <div class="messages">
+          <div></div>
+        </div>
+
         <main>
           
           <h1>Tic Tac T<i class="fa fa-circle title-o" aria-hidden="true"></i>e</h1>
-
-          <div class="messages">
-            <div></div>
-          </div>
-
-          <div id="welcome" class="success"><span class="larger">Welcome!</span><br/>Click "New Game" to get started.</div>
-            <div id="game-over" class="success"></div>
 
           <div class="auth-forms">
             <form id="sign-up" class="sign-up">
@@ -90,26 +86,34 @@
               </span>
             </div>
 
+            <div class="game-board-wrapper">
+
+              <div class="game-board-messages">
+                <div class="game-board-message">
+                  <div></div>
+                  <button type="button" class="new-game">New Game</button>
+              </div>
             
-            <div class="game-board">
-              <div>
-                <div data-id="0"></div>
-                <div data-id="1"></div>
-                <div data-id="2"></div>
-              </div>
-              <div>
-                <div data-id="3"></div>
-                <div data-id="4"></div>
-                <div data-id="5"></div>
-              </div>
-              <div>
-                <div data-id="6"></div>
-                <div data-id="7"></div>
-                <div data-id="8"></div>
+              <div class="game-board">
+                <div>
+                  <div data-id="0"></div>
+                  <div data-id="1"></div>
+                  <div data-id="2"></div>
+                </div>
+                <div>
+                  <div data-id="3"></div>
+                  <div data-id="4"></div>
+                  <div data-id="5"></div>
+                </div>
+                <div>
+                  <div data-id="6"></div>
+                  <div data-id="7"></div>
+                  <div data-id="8"></div>
+                </div>
               </div>
             </div>
 
-            <button type="button" class="new-game">New Game</button>
+            
 
           </div>
           
