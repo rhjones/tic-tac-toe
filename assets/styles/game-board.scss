@@ -5,6 +5,21 @@
 
 $arrow-padding: .5em;
 
+.game-board-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: $game-board-width;
+  height: $game-board-width;
+}
+
+.game-board-messages {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  @extend .text-center;
+}
+
 .cell {
   float: left;
   font-size: 4em;
@@ -28,8 +43,9 @@ $arrow-padding: .5em;
   @include border-radius(30px);
   background-image: url('../images/grid-xs.png');
   background-size: 100%;
-  margin: 0 auto;
-  width: $game-board-width;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 
   > div {
     @extend %game-board-row;
