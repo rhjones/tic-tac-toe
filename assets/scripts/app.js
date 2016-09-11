@@ -10,7 +10,7 @@ const app = {
     xWin: {
       msg: '<h2><i class="fa fa-circle x" aria-hidden="true"></i> wins!</h2>',
     },
-    yWin: {
+    oWin: {
       msg: '<h2><i class="fa fa-circle-o o" aria-hidden="true"></i> wins!</h2>',
     },
     tie: {
