@@ -108,6 +108,8 @@ const logOutSuccess = () => {
   $('#log-in').show();
   $('#sign-up').hide();
   $('.game-messages').hide();
+  $('.fa-arrow-right').hide();
+  $('.fa-arrow-left').hide();
 };
 
 const passwordChangeSuccess = () => {
