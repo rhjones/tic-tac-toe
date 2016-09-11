@@ -12,14 +12,14 @@ $arrow-padding: .5em;
   height: $game-board-width;
 }
 
-.game-board-messages,
+.game-messages,
 .game-board {
   @include border-radius(30px);
   position: absolute;
   top: 0;
 }
 
-.game-board-messages {
+.game-messages {
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -85,6 +85,6 @@ $arrow-padding: .5em;
 
 .new-game {
   margin: 20px 0;
-  width: $game-board-width;
+  width: 100%;
 }
 
