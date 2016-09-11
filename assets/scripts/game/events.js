@@ -47,6 +47,7 @@ const onClickCell = () => {
   if (target.is('i')) {
     target = $(event.target).parent();
   }
+  
   let id = target.data('id');
   if (logic.isValidMove(id)) {
     api.takeTurn(id)

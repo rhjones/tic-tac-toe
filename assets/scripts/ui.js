@@ -150,6 +150,7 @@ const endGame = () => {
   } else if (game.winner === 'tie') {
     messageStick('.game-message div', 'tie');
   }
+  
   $('.game-messages').show();
 };
 

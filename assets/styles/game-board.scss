@@ -6,10 +6,10 @@
 $arrow-padding: .5em;
 
 .game-board-wrapper {
-  position: relative;
-  margin: 0 auto;
-  width: $game-board-width;
   height: $game-board-width;
+  margin: 0 auto;
+  position: relative;
+  width: $game-board-width;
 }
 
 .game-messages,
@@ -20,13 +20,13 @@ $arrow-padding: .5em;
 }
 
 .game-messages {
-  width: 100%;
-  height: 100%;
-  z-index: 2;
   @extend .text-center;
   background: $transparent-black;
-  padding: 50px 20px;
   color: $white;
+  height: 100%;
+  padding: 50px 20px;
+  width: 100%;
+  z-index: 2;
 }
 
 .cell {
