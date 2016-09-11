@@ -18,9 +18,13 @@
     width: 100px;
   }
 
-  .game-board,
+  .game-board-wrapper,
   form {
     width: 300px;
+  }
+
+  .game-board-wrapper {
+    height: 300px;
   }
 
   .game-board {
