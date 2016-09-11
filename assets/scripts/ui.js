@@ -9,9 +9,7 @@ const clearForm = (formId) => {
   document.getElementById(formId).reset();
 };
 
-const message = (location, messageKey) => {
-  let message = $('.messages div');
-  console.log(message);
+const messageFade = (location, messageKey) => {
   $(location)
     .removeClass()
     .addClass(app.alerts[messageKey].class)
@@ -19,6 +17,14 @@ const message = (location, messageKey) => {
     .show()
     .delay(3000)
     .fadeToggle('slow');
+};
+
+const messageStick = (location, messageKey) => {
+  $(location)
+    .removeClass()
+    .addClass(app.alerts[messageKey].class)
+    .html(app.alerts[messageKey].msg)
+    .show();
 };
 
 const toggleAuth = () => {
@@ -50,8 +56,8 @@ const clearCells = () => {
   }
 };
 
-const hideWelcome = () => {
-  $('#welcome').hide();
+const hideGameMessages = () => {
+  $('.game-messages').hide();
 };
 
 const hideGameOver = () => {
@@ -61,19 +67,19 @@ const hideGameOver = () => {
 // AUTH FAILURE
 
 const logInFailure = () => {
-  message('.messages div', 'logInFail');
+  messageFade('.messages div', 'logInFail');
 };
 
 const logOutFailure = () => {
-  message('.messages div', 'logOutFail');
+  messageFade('.messages div', 'logOutFail');
 };
 
 const passwordChangeFailure = () => {
-  message('.messages div', 'passwordChangeFail');
+  messageFade('.messages div', 'passwordChangeFail');
 };
 
 const signUpFailure = () => {
-  message('.messages div', 'signUpFail');
+  messageFade('.messages div', 'signUpFail');
 };
 
 // AUTH SUCCESS
@@ -84,8 +90,8 @@ const logInSuccess = (data) => {
   toggleStats();
   clearForm('sign-up');
   clearForm('log-in');
-  message('#welcome');
-  $('.game-board-messages').show();
+  messageStick('.game-message div', 'welcome');
+  $('.game-messages').show();
 };
 
 const logOutSuccess = () => {
@@ -99,13 +105,13 @@ const logOutSuccess = () => {
   $('.log-in-link').addClass('hidden');
   $('#log-in').show();
   $('#sign-up').hide();
-  $('.game-board-messages').hide();
+  $('.game-messages').hide();
 };
 
 const passwordChangeSuccess = () => {
   toggleChangePassword();
   clearForm('change-password');
-  message('.messages div', 'passwordChangeSuccess');
+  messageFade('.messages div', 'passwordChangeSuccess');
 };
 
 // GAME STATS
@@ -119,28 +125,28 @@ const displayStats = (stats) => {
 // GAME FAILURE
 
 const createGameFailure = () => {
-  message('.messages div', 'createGameFail');
+  messageFade('.messages div', 'createGameFail');
 };
 
 const endGameFailure = () => {
-  message('.messages div', 'endGameFail');
+  messageFade('.messages div', 'endGameFail');
 };
 
 const takeTurnFailure = () => {
-  message('.messages div', 'turnFail');
+  messageFade('.messages div', 'turnFail');
 };
 
 // GAME UI ACTIONS
 
 const endGame = () => {
   if (game.winner === 'x') {
-    message('.game-board-messages div', 'xWin');
+    messageStick('.game-message div', 'xWin');
   } else if (game.winner === 'o') {
-    message('.game-board-messages div', 'yWin');
+    messageStick('.game-message div', 'oWin');
   } else if (game.winner === 'tie') {
-    message('.game-board-messages div', 'tie');
+    messageStick('.game-message div', 'tie');
   }
-  $('.game-board-messages').show();
+  $('.game-messages').show();
 };
 
 const markCell = (id) => {
@@ -177,7 +183,7 @@ module.exports = {
   markCell,
   indicatePlayer,
   setPlayerX,
-  hideWelcome,
+  hideGameMessages,
   createGameFailure,
   endGameFailure,
   takeTurnFailure,
