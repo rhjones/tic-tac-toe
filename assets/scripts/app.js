@@ -5,7 +5,7 @@ const app = {
   alerts: {
     welcome: {
       class: 'welcome',
-      msg: '<span class="larger">Welcome!</span><br/>Click "New Game" to get started.',
+      msg: '<h2>Welcome!</h2><br/>Click "New Game" to get started.',
     },
     xWin: {
       msg: '<h2><i class="fa fa-circle x" aria-hidden="true"></i> wins!</h2>',
