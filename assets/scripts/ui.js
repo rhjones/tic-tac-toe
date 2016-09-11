@@ -96,11 +96,13 @@ const logInSuccess = (data) => {
 
 const logOutSuccess = () => {
   app.user = null;
+  game.xTurn = true;
+  game.currentGameMoves = 0;
+  game.currentCellId = null;
+  game.currentGame = null;
   toggleStats();
   toggleAuth();
-  $('#game-over').hide();
   clearForm('change-password');
-  $('#welcome').hide();
   $('.sign-up-link').removeClass('hidden');
   $('.log-in-link').addClass('hidden');
   $('#log-in').show();
