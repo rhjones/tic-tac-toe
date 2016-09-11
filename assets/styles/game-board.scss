@@ -25,6 +25,8 @@ $arrow-padding: .5em;
   z-index: 2;
   @extend .text-center;
   background: $transparent-black;
+  padding: 50px 20px;
+  color: $white;
 }
 
 .cell {
