@@ -25,7 +25,7 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
 ## Planning and development process
 
 ### Planning
-I started by looking at mobile game apps for design inspiration (particularly those designed by [Dots.co](https://www.dots.co/). Tic-Tac-Toe is a pretty simple game at its core, and I wanted to explore what other fairly streamlined/minimalist games had done to keep gameplay straightforward but also somewhat elegant. 
+I started by looking at mobile game apps for design inspiration (particularly those designed by [Dots.co](https://www.dots.co/)). Tic-Tac-Toe is a pretty simple game at its core, and I wanted to explore what other fairly streamlined or minimalist games had done to keep gameplay straightforward but also somewhat elegant. 
 
 With respect to design, I made [mobile wireframes](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#a-wireframe-of-what-your-game-project-will-look-like) first, and then expanded to larger screen wireframes. On the back end, I put together a [tentative data model](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#the-data-structure-you-plan-to-use). I also developed a series of [user stories](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#4-8-user-stories-for-your-game-project) to help guide feature development.
 
@@ -45,11 +45,13 @@ After this, most of the work was making tweaks to the UI, refactoring the code i
 
 ## Next steps/unsolved problems
 
+- There's a bug in the way that the win/loss/tie game statistics are calculated: games that are won by the authenticated user are calculate as a tie in real-time (but correctly appear as win on the next log in).
+- Another bug: quickly double clicking a game cell causes the game piece to change and throws off the turn indicator, but the data still indicates that the correct player claimed that cell.
 - I'd like to rethink my overall approach to separating the JavaScript code into functions and files. It still feels a little scattered to me, and I hope that as my skills as a developer grow, I'll be able to shape it into something more clean and efficient.
 - I'd particularly like to revisit my method for checking whether a game has been won. This currently takes up around 60 lines of code, and I think there are better ways to go about this.
 - Make the game multiplayer, with the ability to connect two authenticated users as opponents.
-- Add chat functionality.
 - Let the user change the color scheme.
 - Super cool would be to implement [this version](http://tabtimes.com/how-two-developers-turned-age-old-game-something-much-more-12963/) of the game, which uses nine game boards (one board in what is normally an empty square in a basic tic-tac-toe game) and has a [more complex set of rules](https://mathwithbaddrawings.com/2013/06/16/ultimate-tic-tac-toe/). The provided API isn't really set up for this, but I might be able to figure out a way to sort of hack this together using localStorage. This is currently set to "iff I somehow figure out how to do everything else on the bonus list before my time is up" goal status.
+- Add chat functionality.
 
 
