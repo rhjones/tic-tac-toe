@@ -14,6 +14,11 @@ const createGameSuccess = (data) => {
 
 const isValidMove = (id) => {
   let valid = !(game.currentGame.cells[id] && !game.currentGame.over);
+  // if the move is valid, update the game data ASAP
+  // fixes bug where double clicking swaps game token 
+  if (valid) {
+    game.currentGame.cells[id] = game.xTurn ? 'x' : 'o';
+  }
   return valid;
 };
 
