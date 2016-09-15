@@ -166,12 +166,14 @@ const markCell = (id) => {
 
 const setPlayerX = () => {
   $('.fa-arrow-right').fadeIn('fast');
+  $('.fa-arrow-left').hide();
 };
 
 const indicatePlayer = () => {
   $('.fa-arrow-right').fadeToggle('fast');
   $('.fa-arrow-left').fadeToggle('fast');
 };
+
 
 module.exports = {
   toggleAuthOptions,
