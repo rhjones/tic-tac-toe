@@ -101,10 +101,10 @@ const findWinner = (game) => {
   let possibleWinners = [0, 1, 2, 3, 6];
   let won = false;
   for (let i = 0, max = possibleWinners.length; i < max; i++) {
-    if (checkWin(game.cells, i)) {
-      if (game.cells[i] === 'x') {
+    if (checkWin(game.cells, possibleWinners[i])) {
+      if (game.cells[possibleWinners[i]] === 'x') {
         won = game.player_x.id;
-      } else if (game.cells[i] === 'o') {
+      } else if (game.cells[possibleWinners[i]] === 'o') {
         won = game.player_o ? game.player_o.id : 'o';
       }
 
@@ -112,6 +112,8 @@ const findWinner = (game) => {
     }
   }
 
+  // returns game.player_x.id, game.player_o.id / 'o', or false
+  console.log(game.cells, 'winner: ', won);
   return won;
 };
 
