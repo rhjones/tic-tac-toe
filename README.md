@@ -43,10 +43,8 @@ After this, most of the work was making tweaks to the UI, refactoring the code i
 - How to [pass additional data](http://stackoverflow.com/questions/21985201/pass-extra-parameters-to-jquery-ajax-promise-callback) to AJAX callback functions 
 - It's embarrassingly easy to keep reverting to "x and y" instead of "x and o." This will cause you at least an hour of distress when building a tic-tac-toe game.
 
-## Next steps/unsolved problems
+## Next steps
 
-- There's a bug in the way that the win/loss/tie game statistics are calculated: games that are won by the authenticated user are calculate as a tie in real-time (but correctly appear as win on the next log in).
-- Another bug: quickly double clicking a game cell causes the game piece to change and throws off the turn indicator, but the data still indicates that the correct player claimed that cell.
 - I'd like to rethink my overall approach to separating the JavaScript code into functions and files. It still feels a little scattered to me, and I hope that as my skills as a developer grow, I'll be able to shape it into something more clean and efficient.
 - I'd particularly like to revisit my method for checking whether a game has been won. This currently takes up around 60 lines of code, and I think there are better ways to go about this.
 - Make the game multiplayer, with the ability to connect two authenticated users as opponents.
