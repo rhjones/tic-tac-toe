@@ -100,6 +100,7 @@ const logOutSuccess = () => {
   game.currentGameMoves = 0;
   game.currentCellId = null;
   game.currentGame = null;
+  clearCells();
   toggleStats();
   toggleAuth();
   clearForm('change-password');
