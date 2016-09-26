@@ -25,7 +25,7 @@ const onCreateGame = () => {
 const onEndGameSuccess = (data) => {
   logic.updateGame(data);
   ui.endGame();
-  onGetStats(data);
+  onGetStats();
 };
 
 const makeMove = (data) => {
