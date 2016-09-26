@@ -104,6 +104,7 @@ const logOutSuccess = () => {
   toggleStats();
   toggleAuth();
   clearForm('change-password');
+  $('.pwd-form').hide();
   $('.sign-up-link').removeClass('hidden');
   $('.log-in-link').addClass('hidden');
   $('#log-in').show();
