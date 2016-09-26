@@ -396,9 +396,11 @@ webpackJsonp([0],[
 	  game.currentGameMoves = 0;
 	  game.currentCellId = null;
 	  game.currentGame = null;
+	  clearCells();
 	  toggleStats();
 	  toggleAuth();
 	  clearForm('change-password');
+	  $('.pwd-form').hide();
 	  $('.sign-up-link').removeClass('hidden');
 	  $('.log-in-link').addClass('hidden');
 	  $('#log-in').show();
@@ -461,6 +463,7 @@ webpackJsonp([0],[
 
 	var setPlayerX = function setPlayerX() {
 	  $('.fa-arrow-right').fadeIn('fast');
+	  $('.fa-arrow-left').hide();
 	};
 
 	var indicatePlayer = function indicatePlayer() {
@@ -534,7 +537,7 @@ webpackJsonp([0],[
 	var onEndGameSuccess = function onEndGameSuccess(data) {
 	  logic.updateGame(data);
 	  ui.endGame();
-	  onGetStats(data);
+	  onGetStats();
 	};
 
 	var makeMove = function makeMove(data) {
@@ -620,7 +623,7 @@ webpackJsonp([0],[
 	};
 
 	var endGame = function endGame() {
-	  var request = $.ajax({
+	  return $.ajax({
 	    url: app.host + '/games/' + game.currentGame.id,
 	    method: 'PATCH',
 	    headers: {
@@ -632,7 +635,6 @@ webpackJsonp([0],[
 	      }
 	    }
 	  });
-	  return request;
 	};
 
 	var getFinishedGames = function getFinishedGames() {
@@ -674,6 +676,11 @@ webpackJsonp([0],[
 
 	var isValidMove = function isValidMove(id) {
 	  var valid = !(game.currentGame.cells[id] && !game.currentGame.over);
+	  // if the move is valid, update the game data ASAP
+	  // fixes bug where double clicking swaps game token 
+	  if (valid) {
+	    game.currentGame.cells[id] = game.xTurn ? 'x' : 'o';
+	  }
 	  return valid;
 	};
 
@@ -756,10 +763,10 @@ webpackJsonp([0],[
 	  var possibleWinners = [0, 1, 2, 3, 6];
 	  var won = false;
 	  for (var i = 0, max = possibleWinners.length; i < max; i++) {
-	    if (checkWin(game.cells, i)) {
-	      if (game.cells[i] === 'x') {
+	    if (checkWin(game.cells, possibleWinners[i])) {
+	      if (game.cells[possibleWinners[i]] === 'x') {
 	        won = game.player_x.id;
-	      } else if (game.cells[i] === 'o') {
+	      } else if (game.cells[possibleWinners[i]] === 'o') {
 	        won = game.player_o ? game.player_o.id : 'o';
 	      }
 
@@ -767,6 +774,8 @@ webpackJsonp([0],[
 	    }
 	  }
 
+	  // returns game.player_x.id, game.player_o.id / 'o', or false
+	  console.log(game.cells, 'winner: ', won);
 	  return won;
 	};
 
