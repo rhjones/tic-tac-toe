@@ -42,7 +42,7 @@ const takeTurn = (id) => {
 };
 
 const endGame = () => {
-  let request = $.ajax({
+  return $.ajax({
     url: app.host + '/games/' + game.currentGame.id,
     method: 'PATCH',
     headers: {
@@ -54,7 +54,6 @@ const endGame = () => {
       },
     },
   });
-  return request;
 };
 
 const getFinishedGames = () => {

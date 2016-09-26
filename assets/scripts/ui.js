@@ -100,9 +100,11 @@ const logOutSuccess = () => {
   game.currentGameMoves = 0;
   game.currentCellId = null;
   game.currentGame = null;
+  clearCells();
   toggleStats();
   toggleAuth();
   clearForm('change-password');
+  $('.pwd-form').hide();
   $('.sign-up-link').removeClass('hidden');
   $('.log-in-link').addClass('hidden');
   $('#log-in').show();
@@ -165,12 +167,14 @@ const markCell = (id) => {
 
 const setPlayerX = () => {
   $('.fa-arrow-right').fadeIn('fast');
+  $('.fa-arrow-left').hide();
 };
 
 const indicatePlayer = () => {
   $('.fa-arrow-right').fadeToggle('fast');
   $('.fa-arrow-left').fadeToggle('fast');
 };
+
 
 module.exports = {
   toggleAuthOptions,
