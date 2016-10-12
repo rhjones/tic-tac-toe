@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-[rebekahheacock.github.io/tic-tac-toe/](https://rebekahheacock.github.io/tic-tac-toe/)
+[rhjones.github.io/tic-tac-toe/](https://rhjones.github.io/tic-tac-toe/)
 
 Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first project for General Assembly Boston's Web Development Immersive program. See [requirements](https://github.com/ga-wdi-boston/game-project/blob/master/requirements.md) for more details.
 
@@ -27,7 +27,7 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
 ### Planning
 I started by looking at mobile game apps for design inspiration (particularly those designed by [Dots.co](https://www.dots.co/)). Tic-Tac-Toe is a pretty simple game at its core, and I wanted to explore what other fairly streamlined or minimalist games had done to keep gameplay straightforward but also somewhat elegant. 
 
-With respect to design, I made [mobile wireframes](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#a-wireframe-of-what-your-game-project-will-look-like) first, and then expanded to larger screen wireframes. On the back end, I put together a [tentative data model](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#the-data-structure-you-plan-to-use). I also developed a series of [user stories](https://github.com/rebekahheacock/game-project-scope-study/blob/response/study.md#4-8-user-stories-for-your-game-project) to help guide feature development.
+With respect to design, I made [mobile wireframes](https://github.com/rhjones/game-project-scope-study/blob/response/study.md#a-wireframe-of-what-your-game-project-will-look-like) first, and then expanded to larger screen wireframes. On the back end, I put together a [tentative data model](https://github.com/rhjones/game-project-scope-study/blob/response/study.md#the-data-structure-you-plan-to-use). I also developed a series of [user stories](https://github.com/rhjones/game-project-scope-study/blob/response/study.md#4-8-user-stories-for-your-game-project) to help guide feature development.
 
 ### Development 
 I focused on functionality first. I began with authentication: sign up, log in, log out, and change password. Once that was working, I created a very basic game board in my index.html file and added a "new game" button that, when clicked, sends a POST request to the API to create a new game. Once I was able to create a new game, I began building the "click a cell to mark it with an x or an o in the DOM" functionality, then tied this to the PATCH requests I needed to send to the API to update the game on the server. After connecting the DOM interaction with calls to the API, I built a series of functions to check the necessary win conditions, identify the winner, and send a PATCH request to the server to end the game. 
