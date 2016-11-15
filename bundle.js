@@ -248,7 +248,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'https://aqueous-atoll-85096.herokuapp.com',
+	  host: 'https://tictactoe-rhj.herokuapp.com/',
 	  alerts: {
 	    welcome: {
 	      class: 'welcome',
