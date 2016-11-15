@@ -28,7 +28,7 @@ Want to read about my development process? Check out my [blog post](http://rebek
 
 ## Planning and development process
 
-For more details, read my [blog post](http://rebekahheacock.org/2016/09/general-assembly-week-3-project-week/)
+**For more details, read my [blog post](http://rebekahheacock.org/2016/09/general-assembly-week-3-project-week/)**
 
 ### Planning
 I started by looking at mobile game apps for design inspiration (particularly those designed by [Dots.co](https://www.dots.co/)). Tic-Tac-Toe is a pretty simple game at its core, and I wanted to explore what other fairly streamlined or minimalist games had done to keep gameplay straightforward but also somewhat elegant. 
