@@ -2,16 +2,20 @@
 
 [rhjones.github.io/tic-tac-toe/](https://rhjones.github.io/tic-tac-toe/)
 
-Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first project for General Assembly Boston's Web Development Immersive program. See [requirements](https://github.com/ga-wdi-boston/game-project/blob/master/requirements.md) for more details.
+Tic Tac Toe game created to [spec](https://github.com/ga-wdi-boston/game-project) as first project for General Assembly Boston's Web Development Immersive program. See [requirements](https://github.com/ga-wdi-boston/game-project/blob/master/requirements.md) for more details.
+
+**Want to play without signing up? Log in using the email address `a@a.a` and the password `a`.**
+
+Want to read about my development process? Check out my [blog post](http://rebekahheacock.org/2016/09/general-assembly-week-3-project-week/) about Week 3 of General Assembly.
 
 ## Basic features
 
-- authentication (backed by a provided [Rails API](https://github.com/ga-wdi-boston/game-project-api)): register, log in, change password, log out
+- authentication (backed by a [Rails API](https://github.com/rhjones/tic-tac-toe-api)): register, log in, change password, log out
 - a clickable game board
 - a button to start a new game
 - a stats tracker that displays user's total wins, losses, and tied games
 - "win" display that indicates winner (x/o) or tie game
-
+- turn tracker that indicates which player goes next
 
 ## Technologies used
 
@@ -22,7 +26,7 @@ Game created to [spec](https://github.com/ga-wdi-boston/game-project) as first p
 - SCSS/SASS
 - GA WDI Boston [Browser Template](https://github.com/ga-wdi-boston/browser-template)
 
-## Planning and development process
+## [Planning and development process](http://rebekahheacock.org/2016/09/general-assembly-week-3-project-week/)
 
 ### Planning
 I started by looking at mobile game apps for design inspiration (particularly those designed by [Dots.co](https://www.dots.co/)). Tic-Tac-Toe is a pretty simple game at its core, and I wanted to explore what other fairly streamlined or minimalist games had done to keep gameplay straightforward but also somewhat elegant. 
